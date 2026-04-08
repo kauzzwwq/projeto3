@@ -173,10 +173,6 @@ nav a:hover{color:white;}
     left:0;
     margin-right: 10px;
   }
-  .logo img{
-    height: 60px;
-  }
-
   nav{
     margin-top:0;
     flex:1;
@@ -249,33 +245,9 @@ nav a:hover{color:white;}
     margin: 20px auto 0 auto;
     width: 200px;
   }
-    header {
-        flex-direction:row;
-        justify-content:flex-start;
-        padding:15px 10px;
-        background:rgba(255,255,255,0.9);
-    }
-
     .logo img {height:60px;}
-
-    nav ul {
-        flex-direction:row;
-        justify-content:space-around;
-        gap:5px;
-    }
-
-    nav a {font-size:16px;padding:5px 8px;}
-
+    
     /* Card centralizado e responsivo */
-    .card {
-        flex-direction:column;
-        padding:20px;
-        margin:20px auto;
-        width:95%;
-        max-width:400px; /* garante que não fique gigante */
-        text-align:center;
-    }
-
     /* Tênis ajustado dentro do card */
     .img-box {
         position:relative;
