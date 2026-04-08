@@ -188,10 +188,9 @@ sizesDiv.querySelectorAll('button').forEach(btn=>{
     });
 });
 
+// Trocar tênis
 function changeShoe(color){
     const thumbs=document.querySelectorAll('.thumbs img');
-    const infoH1=document.querySelector('.info h1');
-    const infoP=document.querySelector('.info p');
     thumbs.forEach(t=>{t.classList.remove('active');t.style.borderBottomColor="transparent";});
     if(color==='green'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png";
@@ -216,10 +215,17 @@ function changeShoe(color){
     }
 }
 
-// MENU tamanhos
-document.getElementById('menu-men').addEventListener('click',()=>{sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';});
-document.getElementById('menu-women').addEventListener('click',()=>{sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';});
-document.getElementById('menu-kids').addEventListener('click',()=>{sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';});
+// MENU - altera somente tamanhos no mobile
+function isMobile() { return window.innerWidth <= 768; }
+document.getElementById('menu-men').addEventListener('click',()=>{
+    if(isMobile()) sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
+});
+document.getElementById('menu-women').addEventListener('click',()=>{
+    if(isMobile()) sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
+});
+document.getElementById('menu-kids').addEventListener('click',()=>{
+    if(isMobile()) sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
+});
 
 // CONTATO
 document.getElementById('menu-contato').addEventListener('click',()=>{
@@ -232,9 +238,7 @@ document.getElementById('menu-contato').addEventListener('click',()=>{
     buyBtn.style.display='none';
     sizesDiv.style.display='none';
 
-    document.getElementById('back-btn').addEventListener('click',()=>{
-        location.reload();
-    });
+    document.getElementById('back-btn').addEventListener('click',()=>{ location.reload(); });
 });
 </script>
 </body>
