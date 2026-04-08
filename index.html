@@ -12,8 +12,6 @@ body {
     background:linear-gradient(135deg,#ff00cc,#3333ff);
     transition:0.5s;
 }
-
-/* Header */
 header {
     display:flex;
     align-items:center;
@@ -29,8 +27,6 @@ header {
 .logo img {
     height:80px;
 }
-
-/* Nav */
 nav ul {
     display:flex;
     gap:15px;
@@ -50,7 +46,6 @@ nav a {
 }
 nav a:hover { color:white; }
 
-/* Card */
 .card {
     width:80%;
     margin:30px auto;
@@ -64,7 +59,6 @@ nav a:hover { color:white; }
     overflow:visible;
 }
 
-/* Background text */
 .bg-text {
     position:absolute;
     top:-5%;
@@ -79,7 +73,6 @@ nav a:hover { color:white; }
     z-index:0;
 }
 
-/* Shoe image */
 .img-box {
     position:absolute;
     left:-120px;
@@ -93,7 +86,6 @@ nav a:hover { color:white; }
     transition:0.4s;
 }
 
-/* Info */
 .info {
     flex:1;
     margin-left:730px;
@@ -106,7 +98,6 @@ nav a:hover { color:white; }
 .info h2 { font-size:18px; margin:0 0 20px; }
 .info p { font-size:13px; color:#555; line-height:1.8; max-width:400px; }
 
-/* Thumbnails */
 .thumbs { display:flex; gap:15px; margin-top:30px; }
 .thumbs img {
     width:120px;
@@ -118,7 +109,6 @@ nav a:hover { color:white; }
 .thumbs img:hover { transform:scale(1.1); opacity:1; }
 .thumbs img.active { opacity:1; }
 
-/* Sizes */
 .sizes { margin-top:30px; }
 .size-options { display:flex; gap:10px; flex-wrap:wrap; }
 .size-options button {
@@ -127,7 +117,6 @@ nav a:hover { color:white; }
 }
 .size-options button.active { background:black; color:white; transform:scale(1.05); }
 
-/* Buy button */
 .buy-btn {
     margin-top:30px;
     width:220px;
@@ -143,7 +132,7 @@ nav a:hover { color:white; }
 }
 .buy-btn:hover { transform:scale(1.05); }
 
-/* Responsive mobile */
+/* RESPONSIVO CELULAR */
 @media (max-width:768px){
     .card { width:95%; padding:30px; margin-top:100px; }
     .img-box { left:50%; top:50%; transform:translate(-50%,-50%) rotate(-25deg); }
@@ -182,14 +171,14 @@ nav a:hover { color:white; }
 
 <div class="thumbs">
 <img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png" onclick="changeShoe('pink')">
-<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" class="active" onclick="changeShoe('green')">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" onclick="changeShoe('green')>
 <img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png" onclick="changeShoe('red')">
 </div>
 
 <div class="sizes" id="sizes-div">
 <span>Selecione o Tamanho</span>
 <div class="size-options" id="size-options">
-<button>35</button><button>36</button><button>37</button><button>38</button>
+<button class="active">35</button><button>36</button><button>37</button><button>38</button>
 </div>
 </div>
 
@@ -221,7 +210,7 @@ bgText.innerText="VAPORFLY GREEN"; bgText.style.color="rgba(0,200,83,0.05)";
 buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
 thumbs[1].classList.add("active"); thumbs[1].style.borderBottomColor="#00e676";
 infoH1.innerHTML="NIKE<br>VAPORFLY 3";
-infoP.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.";
+infoP.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...";
 }
 if(color==='pink'){
 mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png";
@@ -229,7 +218,7 @@ bgText.innerText="VAPORFLY PINK"; bgText.style.color="rgba(255,0,204,0.1)";
 buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
 thumbs[0].classList.add("active"); thumbs[0].style.borderBottomColor="#ff0099";
 infoH1.innerHTML="NIKE<br>VAPORFLY 3";
-infoP.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.";
+infoP.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...";
 }
 if(color==='red'){
 mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png";
@@ -237,23 +226,21 @@ bgText.innerText="AIR MAX 90"; bgText.style.color="rgba(255,23,68,0.1)";
 buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
 thumbs[2].classList.add("active"); thumbs[2].style.borderBottomColor="#ff1744";
 infoH1.innerHTML="NIKE<br>AIR MAX 90";
-infoP.innerText="O Air Max 90 combina conforto e estilo clássico com tecnologia moderna. Ideal para uso diário e performance urbana, garantindo amortecimento e durabilidade excepcionais.";
-}
+infoP.innerText="O Air Max 90 combina conforto e estilo clássico...";
 }
 
-// Menu
+// Menu apenas muda tamanhos
 document.getElementById('menu-men').addEventListener('click',()=>{
 sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
 });
-
 document.getElementById('menu-women').addEventListener('click',()=>{
 sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
 });
-
 document.getElementById('menu-kids').addEventListener('click',()=>{
 sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
 });
 
+// Contato
 document.getElementById('menu-contato').addEventListener('click',()=>{
 infoCard.innerHTML='<h2>Contato</h2><p>GitHub: <a href="https://github.com/kauzzwwq" target="_blank">kauzzwwq</a><br>WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">(+55) 49 99969-5059</a></p><button onclick="window.location.reload()" class="buy-btn">Voltar para os tênis</button>';
 mainShoe.style.display='none';
