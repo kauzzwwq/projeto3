@@ -152,12 +152,10 @@ nav a:hover{color:white;}
 
 /* MOBILE */
 @media(max-width:900px){
-  header{
-    flex-direction:row;
-    justify-content:flex-start;
-    padding:15px 10px;
-    margin-top:0;
-    background:rgba(255,255,255,0.9);
+  .card{
+    width:95%;       /* ocupa quase toda a tela */
+    margin:10px auto; /* menor para caber */
+    padding:15px;    /* diminui o padding */
   }
   .logo{
     position:relative;
@@ -192,16 +190,20 @@ nav a:hover{color:white;}
     display:flex;
     justify-content:center;
   }
+
   .img-box img{
-    width:80%; max-width:350px;
+    width:100%;      /* ocupa todo o espaço disponível */
+    max-width:300px; /* limite máximo */
     height:auto;
     transform:rotate(-40deg);
   }
-  .info{
+
+    .info{
     margin-left:0;
     transform:none;
     margin-top:0;
     text-align:center;
+    width:100%;      
   }
   .bg-text{
     font-size:90px;
