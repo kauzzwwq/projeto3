@@ -138,51 +138,232 @@ function changeShoe(color){
         document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
         buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
         thumbs[2].classList.add("active"); thumbs[2].style.borderBottomColor="#ff1744";
-    }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nike.com</title>
 
-    infoCard.style.display="block"; mainShoe.style.display="block"; buyBtn.style.display="block";
-    updateSizesButtons();
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#00c853,#003d1f);
 }
 
-// atualizar categoria
-function setCategory(cat){
-    activeCategory = cat;
-    contactBox.style.display='none';
-    infoCard.style.display='flex'; mainShoe.style.display='block'; buyBtn.style.display='block';
-
-    if(cat==='men'){
-        sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
-        infoCard.querySelector('span').innerText="Men's Shoes";
-    }
-    if(cat==='women'){
-        sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
-        infoCard.querySelector('span').innerText="Women's Shoes";
-    }
-    if(cat==='kids'){
-        sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
-        infoCard.querySelector('span').innerText="Kid's Shoes";
-    }
-
-    changeShoe(activeShoe);
+/* HEADER */
+header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    padding:20px;
 }
 
-document.getElementById('menu-men').addEventListener('click', ()=>{ setCategory('men'); });
-document.getElementById('menu-women').addEventListener('click', ()=>{ setCategory('women'); });
-document.getElementById('menu-kids').addEventListener('click', ()=>{ setCategory('kids'); });
+.logo{
+    position:absolute;
+    left:20px;
+}
 
-document.getElementById('menu-contact').addEventListener('click', ()=>{
-    infoCard.style.display='none';
-    mainShoe.style.display='none';
-    buyBtn.style.display='none';
-    contactBox.style.display='flex';
-});
+.logo img{
+    height:70px;
+}
 
-document.getElementById('back-btn').addEventListener('click', ()=>{
-    contactBox.style.display='none';
-    setCategory(activeCategory);
-});
+nav ul{
+    display:flex;
+    gap:15px;
+    list-style:none;
+    padding:0;
+}
 
-updateSizesButtons();
+nav a{
+    text-decoration:none;
+    color:black;
+    font-weight:600;
+}
+
+/* CARD */
+.card{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    border-radius:20px;
+}
+
+/* IMAGEM */
+.img-box{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.img-box img{
+    width:100%;
+    max-width:400px;
+    transform:rotate(-20deg);
+}
+
+/* INFO */
+.info{
+    flex:1;
+}
+
+.info h1{
+    font-size:32px;
+}
+
+.info p{
+    font-size:14px;
+}
+
+/* THUMBS */
+.thumbs{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.thumbs img{
+    width:80px;
+    cursor:pointer;
+}
+
+/* TAMANHOS */
+.size-options{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.size-options button{
+    width:45px;
+    height:45px;
+}
+
+/* BOTÃO */
+.buy-btn{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:25px;
+    background:#00c853;
+    color:white;
+    font-weight:600;
+}
+
+/* CONTATO */
+.contact-box{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 768px){
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .logo{
+        position:static;
+    }
+
+    .card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .img-box img{
+        transform:rotate(0deg);
+        max-width:300px;
+    }
+
+    .info{
+        margin:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/logo.png">
+</div>
+
+<nav>
+<ul>
+<li><a id="menu-men">MEN</a></li>
+<li><a id="menu-women">WOMEN</a></li>
+<li><a id="menu-kids">KIDS</a></li>
+<li><a id="menu-contact">CONTATO</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="card">
+
+<div class="img-box">
+<img id="main-shoe" src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png">
+</div>
+
+<div class="info" id="info-card">
+<span>Men's Shoes</span>
+<h1>NIKE VAPORFLY 3</h1>
+<h2>$160</h2>
+
+<p>O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...</p>
+
+<div class="thumbs">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png" onclick="changeShoe('pink')">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" onclick="changeShoe('green')">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png" onclick="changeShoe('red')">
+</div>
+
+<div class="size-options">
+<button>38</button><button>39</button><button>40</button>
+<button>41</button><button>42</button>
+</div>
+
+<button class="buy-btn">BUY NOW</button>
+</div>
+</div>
+
+<div class="contact-box" id="contact-box">
+<h1>CONTATO</h1>
+<a href="https://github.com/kauzzwwq" target="_blank">GitHub</a>
+<a href="https://wa.me/5549999695059" target="_blank">WhatsApp</a>
+</div>
+
+<script>
+function changeShoe(color){
+    const img = document.getElementById("main-shoe");
+
+    if(color==='green'){
+        img.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png";
+    }
+    if(color==='pink'){
+        img.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png";
+    }
+    if(color==='red'){
+        img.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png";
+    }
+}
 </script>
 
 </body>
