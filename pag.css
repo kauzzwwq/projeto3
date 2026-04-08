@@ -151,7 +151,7 @@ nav a:hover{color:white;}
 }
 
 /* MOBILE */
-@media(max-width:750px){
+@media(max-width:780px){
   header{
     flex-direction:row;
     justify-content:flex-start;
