@@ -1,91 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nike.com</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nike.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#00c853,#003d1f);transition:0.5s;}
+header{display:flex;align-items:center;justify-content:center;position:relative;padding:25px 0;}
+.logo{position:absolute;top:20px;left:20px;}
+.logo img{height:100px;}
+nav{margin-top:30px;}
+nav ul{display:flex;gap:15px;list-style:none;padding:0;margin:0;}
+nav a{text-decoration:none;color:black;font-weight:600;font-size:22px;padding:10px 15px;letter-spacing:1px;transition:0.3s;cursor:pointer;}
+nav a:hover{color:white;}
+.card{width:80%;margin:30px auto;background:white;padding:60px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;overflow:visible;transition:0.5s;}
+.bg-text{position:absolute;top:-5%;left:50%;transform:translateX(-50%);letter-spacing:-5px;font-size:180px;font-weight:800;color:rgba(0,200,83,0.05);white-space:nowrap;pointer-events:none;z-index:0;}
+.img-box{position:absolute;left:-120px;top:45%;transform:translateY(-50%);z-index:1;}
+.img-box img{width:800px;transform:rotate(-40deg);transition:0.4s;}
+.info{flex:1;margin-left:730px;margin-top:180px;transform:translateY(-110px);z-index:1;}
+.info span{font-size:11px;letter-spacing:1px;color:#888;}
+.info h1{font-size:52px;margin:5px 0 15px;}
+.info h2{font-size:18px;margin:0 0 20px;}
+.info p{font-size:13px;color:#555;line-height:1.8;max-width:400px;}
+.thumbs{display:flex;gap:15px;margin-top:30px;}
+.thumbs img{width:120px;cursor:pointer;transition:0.3s;opacity:0.6;border-bottom:3px solid transparent;}
+.thumbs img:hover{transform:scale(1.1);opacity:1;}
+.thumbs img.active{opacity:1;}
+.sizes{margin-top:30px;}
+.sizes span{font-size:13px;font-weight:600;color:#111;margin-bottom:12px;display:block;}
+.size-options{display:flex;gap:10px;flex-wrap:wrap;}
+.size-options button{width:50px;height:50px;border:1px solid #e5e5e5;background:#f7f7f7;border-radius:10px;cursor:pointer;transition:0.25s;font-weight:600;}
+.size-options button.active{background:black;color:white;transform:scale(1.05);}
+.buy-btn{margin-top:30px;width:220px;height:55px;background:linear-gradient(135deg,#00e676,#00c853);color:#fff;border:none;border-radius:30px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:0.3s;}
+.buy-btn:hover{transform:scale(1.05);}
 
-    <!-- Fonte estilo Nike -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-        }
-
-        /* HEADER */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 10px 0;
-        }
-
-        /* LOGO */
-        .logo {
-            position: absolute;
-            top: 20px; /* ajusta a posição vertical da logo */
-            left: 0;
-
-        }
-
-        .logo img {
-            height: 100px;
-        }
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 25px 0; /* aumenta altura do topo */
-}
-
-/* NAV */
-nav {
-    margin-top: 30px; /* desce mais */
-}
-
-nav ul {
-    display: flex;
-    gap: 25px; /* aumenta um pouco o espaço entre itens */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-    font-size: 22px; /* 🔥 maior */
-    padding: 10px 15px; /* 🔥 aumenta área do botão */
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-    </style>
+/* Contato */
+.contact-box{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px;background:white;margin:30px auto;width:80%;position:relative;transition:0.5s;border-radius:20px;}
+.contact-box h1{font-size:50px;margin-bottom:30px;color:#333;}
+.contact-link{display:block;margin:10px 0;font-size:22px;color:#00c853;text-decoration:none;transition:0.3s;}
+.contact-link:hover{color:#009624;}
+.back-btn{margin-top:40px;width:220px;height:55px;background:#333;color:#fff;border:none;border-radius:30px;font-weight:600;cursor:pointer;transition:0.3s;font-size:18px;}
+.back-btn:hover{background:#555;}
+</style>
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="Nike Logo">
-        </div>
+<header>
+<div class="logo"><img src="img/logo.png"></div>
+<nav>
+<ul>
+<li><a id="menu-men">MEN</a></li>
+<li><a id="menu-women">WOMEN</a></li>
+<li><a id="menu-kids">KIDS</a></li>
+<li><a id="menu-contact">CONTATO</a></li>
+</ul>
+</nav>
+</header>
 
-        <nav>
-            <ul>
-                <li><a href="#men">MEN</a></li>
-                <li><a href="#women">WOMEN</a></li>
-                <li><a href="#kids">KIDS</a></li>
-                <li><a href="#accessories">ACCESSORIES</a></li>
-                <li><a href="#sales">SALES</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="card">
+<div class="bg-text" id="bgText">VAPORFLY GREEN</div>
+<div class="img-box">
+<img id="main-shoe" src="img/tenisva.png.png">
+</div>
+<div class="info" id="info-card">
+<span>Men's Shoes</span>
+<h1>NIKE<br>VAPORFLY 3</h1>
+<h2>$160</h2>
+<p>O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...</p>
+<div class="thumbs">
+<img src="img/tenis1.png.png" onclick="changeShoe('pink')">
+<img src="img/tenisva.png.png" class="active" onclick="changeShoe('green')">
+<img src="img/tenisr.png.png" onclick="changeShoe('red')">
+</div>
+<div class="sizes">
+<span>Selecione o Tamanho</span>
+<div class="size-options" id="size-options">
+<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>
+</div>
+</div>
+<button class="buy-btn" id="buy-btn">BUY NOW</button>
+</div>
+</div>
+
+<!-- Contato -->
+<div class="contact-box" id="contact-box">
+<h1>CONTATO</h1>
+<a class="contact-link" href="https://github.com/kauzzwwq" target="_blank">GitHub</a>
+<a class="contact-link" href="https://wa.me/5549999695059" target="_blank">WhatsApp</a>
+<button class="back-btn" id="back-btn">Voltar para os tênis</button>
+</div>
+
+<script>
+const infoCard = document.getElementById('info-card');
+const mainShoe = document.getElementById('main-shoe');
+const bgText = document.getElementById('bgText');
+const buyBtn = document.getElementById('buy-btn');
+const sizeOptions = document.getElementById('size-options');
+const contactBox = document.getElementById('contact-box');
+
+let activeShoe = 'green';
+let activeCategory = 'men';
+
+function updateSizesButtons() {
+    const btns = document.querySelectorAll('.size-options button');
+    btns.forEach(btn => btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }));
+}
+
+// troca de tênis
+function changeShoe(color){
+    activeShoe = color;
+    const thumbs = document.querySelectorAll('.thumbs img');
+    const infoH1 = document.querySelector('.info h1');
+    const infoP = document.querySelector('.info p');
+    thumbs.forEach(t => { t.classList.remove('active'); t.style.borderBottomColor="transparent"; });
+
+    if(color==='green'){
+        mainShoe.src="img/tenisva.png.png";
+        bgText.innerText="VAPORFLY GREEN"; bgText.style.color="rgba(0,200,83,0.05)";
+        document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
+        buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
+        thumbs[1].classList.add("active"); thumbs[1].style.borderBottomColor="#00e676";
+    }
+    if(color==='pink'){
+        mainShoe.src="img/tenis1.png.png";
+        bgText.innerText="VAPORFLY PINK"; bgText.style.color="rgba(255,0,204,0.1)";
+        document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
+        buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
+        thumbs[0].classList.add("active"); thumbs[0].style.borderBottomColor="#ff0099";
+    }
+    if(color==='red'){
+        mainShoe.src="img/tenisr.png.png";
+        bgText.innerText="AIR MAX 90"; bgText.style.color="rgba(255,23,68,0.1)";
+        document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
+        buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
+        thumbs[2].classList.add("active"); thumbs[2].style.borderBottomColor="#ff1744";
+    }
+
+    infoCard.style.display="block"; mainShoe.style.display="block"; buyBtn.style.display="block";
+    updateSizesButtons();
+}
+
+// atualizar categoria
+function setCategory(cat){
+    activeCategory = cat;
+    contactBox.style.display='none';
+    infoCard.style.display='flex'; mainShoe.style.display='block'; buyBtn.style.display='block';
+
+    if(cat==='men'){
+        sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
+        infoCard.querySelector('span').innerText="Men's Shoes";
+    }
+    if(cat==='women'){
+        sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
+        infoCard.querySelector('span').innerText="Women's Shoes";
+    }
+    if(cat==='kids'){
+        sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
+        infoCard.querySelector('span').innerText="Kid's Shoes";
+    }
+
+    changeShoe(activeShoe);
+}
+
+document.getElementById('menu-men').addEventListener('click', ()=>{ setCategory('men'); });
+document.getElementById('menu-women').addEventListener('click', ()=>{ setCategory('women'); });
+document.getElementById('menu-kids').addEventListener('click', ()=>{ setCategory('kids'); });
+
+document.getElementById('menu-contact').addEventListener('click', ()=>{
+    infoCard.style.display='none';
+    mainShoe.style.display='none';
+    buyBtn.style.display='none';
+    contactBox.style.display='flex';
+});
+
+document.getElementById('back-btn').addEventListener('click', ()=>{
+    contactBox.style.display='none';
+    setCategory(activeCategory);
+});
+
+updateSizesButtons();
+</script>
 
 </body>
 </html>
