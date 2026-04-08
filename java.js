@@ -25,7 +25,7 @@ function changeShoe(color){
   const thumbs=document.querySelectorAll('.thumbs img');
   thumbs.forEach(t=>{t.classList.remove('active'); t.style.borderBottomColor="transparent";});
   if(color==='green'){
-    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true";
+    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png?raw=true";
     bgText.innerText="VAPORFLY GREEN"; bgText.style.color="rgba(0,200,83,0.05)";
     document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
     buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
@@ -33,7 +33,7 @@ function changeShoe(color){
     shoeDescription.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...";
   }
   if(color==='pink'){
-    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png.png?raw=true";
+    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png?raw=true";
     bgText.innerText="VAPORFLY PINK"; bgText.style.color="rgba(255,0,204,0.1)";
     document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
     buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
@@ -41,7 +41,7 @@ function changeShoe(color){
     shoeDescription.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...";
   }
   if(color==='red'){
-    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png.png?raw=true";
+    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png?raw=true";
     bgText.innerText="VAPORFLY RED"; bgText.style.color="rgba(255,23,68,0.1)";
     bgText.innerText="AIR MAX EX 90"; // 
     bgText.style.color="rgba(255,23,68,0.1)";
