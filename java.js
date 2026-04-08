@@ -42,7 +42,7 @@ function changeShoe(color){
   }
   if(color==='red'){
     mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png?raw=true";
-    bgText.innerText="VAPORFLY RED"; bgText.style.color="rgba(255,23,68,0.1)";
+    bgText.innerText="AIR MAX EX 90"; bgText.style.color="rgba(255,23,68,0.1)";
     bgText.innerText="AIR MAX EX 90"; // 
     bgText.style.color="rgba(255,23,68,0.1)";
     document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
