@@ -5,55 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nike.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+<link rel="stylesheet" href="pag.css">
+<script src="java.js" defer></script>
 </head>
 <body>
 
 <header>
-  <div class="logo"><img src="https://github.com/kauzzwwq/projeto3/blob/main/logo.png?raw=true"></div>
-  <nav>
-    <ul>
-      <li><a id="menu-men">MEN</a></li>
-      <li><a id="menu-women">WOMEN</a></li>
-      <li><a id="menu-kids">KIDS</a></li>
-      <li><a id="menu-contato">CONTATO</a></li>
-    </ul>
-  </nav>
+<div class="logo"><img src="https://github.com/kauzzwwq/projeto3/blob/main/logo.png?raw=true"></div>
+<nav>
+<ul>
+<li><a id="menu-men">MEN</a></li>
+<li><a id="menu-women">WOMEN</a></li>
+<li><a id="menu-kids">KIDS</a></li>
+<li><a id="menu-contato">CONTATO</a></li>
+</ul>
+</nav>
 </header>
 
+<!-- Card principal -->
 <div class="card" id="shoe-card">
-  <div class="bg-text" id="bgText">VAPORFLY GREEN</div>
-  <div class="img-box">
-    <img id="main-shoe" src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true">
-  </div>
-  <div class="info" id="info-card">
-    <span id="shoe-category">Men's Shoes</span>
-    <h1>NIKE<br>VAPORFLY 3</h1>
-    <h2>$160</h2>
-    <p id="shoe-description">O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...</p>
-    <div class="thumbs">
-      <img src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png.png?raw=true" onclick="changeShoe('pink')">
-      <img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true" class="active" onclick="changeShoe('green')">
-      <img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png.png?raw=true" onclick="changeShoe('red')">
-    </div>
-    <div class="sizes" id="sizes-wrapper">
-      <span>Selecione o Tamanho</span>
-      <div class="size-options" id="size-options">
-        <button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>
-      </div>
-    </div>
-    <button class="buy-btn" id="buy-btn">BUY NOW</button>
-  </div>
+<div class="bg-text" id="bgText">VAPORFLY GREEN</div>
+<div class="img-box">
+<img id="main-shoe" src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png?raw=true">
+</div>
+<div class="info" id="info-card">
+<span id="shoe-category">Men's Shoes</span>
+<h1>NIKE<br>VAPORFLY 3</h1>
+<h2>$160</h2>
+<p id="shoe-description">O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...</p>
+<div class="thumbs">
+<img src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png?raw=true" onclick="changeShoe('pink')">
+<img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png?raw=true" class="active" onclick="changeShoe('green')">
+<img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png?raw=true" onclick="changeShoe('red')">
+</div>
+<div class="sizes" id="sizes-wrapper">
+<span>Selecione o Tamanho</span>
+<div class="size-options" id="size-options">
+<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>
+</div>
+</div>
+<button class="buy-btn" id="buy-btn">BUY NOW</button>
+</div>
 </div>
 
+<!-- Contato -->
 <div id="contact-section">
-  <h1>CONTATO</h1>
-  <p>GitHub: <a href="https://github.com/kauzzwwq" target="_blank">https://github.com/kauzzwwq</a></p>
-  <p>WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">https://wa.me/5549999695059</a></p>
-  <button class="buy-btn" id="back-btn">Voltar para os tênis</button>
+<h1>CONTATO</h1>
+<p>GitHub: <a href="https://github.com/kauzzwwq" target="_blank">https://github.com/kauzzwwq</a></p>
+<p>WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">https://wa.me/5549999695059</a></p>
+<button class="buy-btn" id="back-btn">Voltar para os tênis</button>
 </div>
-
 
 </body>
 </html>
