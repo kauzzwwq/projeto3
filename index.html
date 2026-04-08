@@ -6,6 +6,7 @@
 <title>Nike.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/* PC Layout - NÃO ALTERAR */
 body {
     margin:0;
     font-family:'Poppins',sans-serif;
@@ -156,47 +157,71 @@ nav a:hover{color:white;}
     text-align:center;
 }
 
-/* Mobile */
+/* MOBILE */
 @media(max-width:768px){
-.card{
+  header{
+    flex-direction:row;
+    justify-content:flex-start; /* logo no canto esquerdo */
+    padding:15px 10px;
+    margin-top:0;
+    background:rgba(255,255,255,0.9); /* fundo leve para destacar logo */
+  }
+  .logo{
+    position:relative;
+    top:0;
+    left:0;
+    margin-right:10px;
+  }
+  .logo img{height:60px;}
+  nav{
+    margin-top:0;
+    flex:1;
+  }
+  nav ul{
+    flex-direction:row;
+    justify-content:space-around;
+    gap:5px;
+  }
+  nav a{
+    font-size:16px;
+    padding:5px 8px;
+    color:black;
+  }
+  .card{
     flex-direction:column;
     padding:20px;
     margin:20px;
-}
-.img-box{
+  }
+  .img-box{
     position:relative;
     left:0; top:0; transform:none;
-    margin-bottom:20px;
+    margin-bottom:15px;
     display:flex;
     justify-content:center;
-}
-.img-box img{
-    width:90%; max-width:350px; height:auto;
-}
-.info{
+  }
+  .img-box img{
+    width:80%; max-width:350px;
+    height:auto;
+    transform:rotate(-40deg);
+  }
+  .info{
     margin-left:0;
     transform:none;
     margin-top:0;
-}
-.bg-text{
-    font-size:100px;
-    top:10%;
-}
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-nav a{
-    font-size:16px; padding:5px;
-}
-.thumbs{
+    text-align:center;
+  }
+  .bg-text{
+    font-size:90px;
+    top:5%;
+  }
+  .thumbs{
     justify-content:center;
     margin-top:15px;
     flex-wrap:wrap;
-}
-.info p, .info h1, .info h2{text-align:center;}
-.size-options{justify-content:center;}
-.buy-btn{margin:20px auto 0 auto;}
+  }
+  .info p, .info h1, .info h2{text-align:center;}
+  .size-options{justify-content:center;}
+  .buy-btn{margin:20px auto 0 auto;}
 }
 </style>
 </head>
@@ -249,6 +274,7 @@ nav a{
 </div>
 
 <script>
+// ELEMENTOS
 const mainShoe = document.getElementById('main-shoe');
 const bgText = document.getElementById('bgText');
 const buyBtn = document.getElementById('buy-btn');
@@ -258,7 +284,8 @@ const shoeDescription = document.getElementById('shoe-description');
 const shoeCard = document.getElementById('shoe-card');
 const contactSection = document.getElementById('contact-section');
 
-function selectSize() {
+// SELECIONAR TAMANHO
+function selectSize(){
   const buttons = document.querySelectorAll('.size-options button');
   buttons.forEach(btn=>{
     btn.addEventListener('click',()=>{
@@ -269,6 +296,7 @@ function selectSize() {
 }
 selectSize();
 
+// TROCAR TÊNIS
 function changeShoe(color){
   const thumbs=document.querySelectorAll('.thumbs img');
   thumbs.forEach(t=>{t.classList.remove('active'); t.style.borderBottomColor="transparent";});
@@ -298,7 +326,7 @@ function changeShoe(color){
   }
 }
 
-// Men/Women/Kids apenas mudam tamanhos
+// MEN / WOMEN / KIDS - apenas tamanhos
 document.getElementById('menu-men').addEventListener('click',()=>{
   sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
   shoeCategory.innerText="Men's Shoes";
@@ -315,16 +343,16 @@ document.getElementById('menu-kids').addEventListener('click',()=>{
   selectSize();
 });
 
-// Contato
+// CONTATO
 document.getElementById('menu-contato').addEventListener('click',()=>{
-  shoeCard.style.display = 'none';
-  contactSection.style.display = 'block';
+  shoeCard.style.display='none';
+  contactSection.style.display='block';
 });
 
-// Botão voltar
+// VOLTAR PARA OS TÊNIS
 document.getElementById('back-btn').addEventListener('click',()=>{
-  contactSection.style.display = 'none';
-  shoeCard.style.display = 'flex';
+  contactSection.style.display='none';
+  shoeCard.style.display='flex';
 });
 </script>
 
