@@ -204,16 +204,6 @@ nav a:hover{color:white;}
     text-align: center;
     position: relative;
   }
-
-  .img-box{
-    position: relative;
-    left: 0; top: 0; transform: none;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
   .img-box img{
     width: 80%;
     max-width: 300px;
@@ -297,13 +287,6 @@ nav a:hover{color:white;}
         justify-content:center;
         align-items:center;
     }
-    .img-box img {
-        width:80%;
-        max-width:300px;
-        height:auto;
-        transform:rotate(-40deg);
-    }
-
     /* Info centralizada */
     .info {
         margin:0;
@@ -317,11 +300,7 @@ nav a:hover{color:white;}
     .bg-text {font-size:70px; top:0;}
 
     /* Thumbs e tamanhos centralizados */
-    .thumbs {
-        justify-content:center;
-        flex-wrap:wrap;
-        margin-top:15px;
-    }
+   
     .size-options {justify-content:center; flex-wrap:wrap;}
 
     /* Botão de compra centralizado */
