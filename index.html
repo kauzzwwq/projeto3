@@ -7,325 +7,282 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 body {
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#00c853,#003d1f);
-    transition:0.5s;
-}
-header{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    padding:25px 0;
-}
-.logo{
-    position:absolute;
-    top:20px;
-    left:20px;
-}
-.logo img{height:100px;}
-nav{margin-top:30px;}
-nav ul{
-    display:flex;
-    gap:15px;
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-nav a{
-    text-decoration:none;
-    color:black;
-    font-weight:600;
-    font-size:22px;
-    padding:10px 15px;
-    letter-spacing:1px;
-    transition:0.3s;
-    cursor:pointer;
-}
-nav a:hover{color:white;}
-
-.card{
-    width:80%;
-    margin:30px auto;
-    background:white;
-    padding:60px;
-    position:relative;
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:40px;
-    overflow:visible;
-}
-.bg-text{
-    position:absolute;
-    top:-5%;
-    left:50%;
-    transform:translateX(-50%);
-    letter-spacing:-5px;
-    font-size:179px; /* diminuiu 1 grau */
-    font-weight:800;
-    color:rgba(0,200,83,0.05);
-    white-space:nowrap;
-    pointer-events:none;
-    z-index:0;
-}
-.img-box{
-    position:absolute;
-    left:-120px;
-    top:45%;
-    transform:translateY(-50%);
-    z-index:1;
-}
-.img-box img{
-    width:800px;
-    transform:rotate(-40deg);
-    transition:0.4s;
-}
-.info{
-    flex:1;
-    margin-left:730px;
-    margin-top:180px;
-    transform:translateY(-110px);
-    z-index:1;
-}
-.info span{font-size:11px;letter-spacing:1px;color:#888;}
-.info h1{font-size:52px;margin:5px 0 15px;}
-.info h2{font-size:18px;margin:0 0 20px;}
-.info p{font-size:13px;color:#555;line-height:1.8;max-width:400px;}
-.thumbs{display:flex;gap:15px;margin-top:30px;}
-.thumbs img{
-    width:120px;
-    cursor:pointer;
-    transition:0.3s;
-    opacity:0.6;
-    border-bottom:3px solid transparent;
-}
-.thumbs img:hover{transform:scale(1.1);opacity:1;}
-.thumbs img.active{opacity:1;}
-.sizes{margin-top:30px;}
-.sizes span{
-    font-size:13px;
-    font-weight:600;
-    color:#111;
-    margin-bottom:12px;
-    display:block;
-}
-.size-options{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-.size-options button{
-    width:50px;
-    height:50px;
-    border:1px solid #e5e5e5;
-    background:#f7f7f7;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.25s;
-    font-weight:600;
-}
-.size-options button.active{
-    background:black;
-    color:white;
-    transform:scale(1.05);
-}
-.buy-btn{
-    margin-top:30px;
-    width:220px;
-    height:55px;
-    background:linear-gradient(135deg,#00e676,#00c853);
-    color:#fff;
-    border:none;
-    border-radius:30px;
-    font-weight:600;
-    letter-spacing:1px;
-    cursor:pointer;
-    transition:0.3s;
-}
-.buy-btn:hover{transform:scale(1.05);}
-
-/* Contato */
-#contact-section{
-    display:none;
-    width:80%;
-    margin:30px auto;
-    padding:60px;
-    background:white;
-    text-align:center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #00c853, #003d1f);
+    transition: 0.5s;
 }
 
-/* Mobile */
-@media(max-width:768px){
-.card{
-    flex-direction:column;
-    padding:20px;
-    margin:20px;
+/* HEADER PC */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 25px 0;
 }
-.img-box{
-    position:relative;
-    left:0; top:0; transform:none;
-    margin-bottom:20px;
-    display:flex;
-    justify-content:center;
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
-.img-box img{
-    width:90%; max-width:350px; height:auto;
+.logo img { height: 100px; }
+
+nav { margin-top: 30px; }
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.info{
-    margin-left:0;
-    transform:none;
-    margin-top:0;
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    cursor: pointer;
 }
-.bg-text{
-    font-size:100px;
-    top:10%;
+nav a:hover { color: white; }
+
+/* CARD PC */
+.card {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 60px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: visible;
 }
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
+.bg-text {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: -5px;
+    font-size: 180px;
+    font-weight: 800;
+    color: rgba(0,200,83,0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
 }
-nav a{
-    font-size:16px; padding:5px;
+.img-box {
+    position: absolute;
+    left: -120px;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
-.thumbs{
-    justify-content:center;
-    margin-top:15px;
-    flex-wrap:wrap;
+.img-box img {
+    width: 800px;
+    transform: rotate(-40deg);
+    transition: 0.4s;
 }
-.info p, .info h1, .info h2{text-align:center;}
-.size-options{justify-content:center;}
-.buy-btn{margin:20px auto 0 auto;}
+.info {
+    flex: 1;
+    margin-left: 730px;
+    margin-top: 180px;
+    transform: translateY(-110px);
+    z-index: 1;
 }
+.info span { font-size: 11px; letter-spacing: 1px; color: #888; }
+.info h1 { font-size: 52px; margin: 5px 0 15px; }
+.info h2 { font-size: 18px; margin: 0 0 20px; }
+.info p { font-size: 13px; color: #555; line-height: 1.8; max-width: 400px; }
+
+.thumbs {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+.thumbs img {
+    width: 120px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.6;
+    border-bottom: 3px solid transparent;
+}
+.thumbs img:hover { transform: scale(1.1); opacity: 1; }
+.thumbs img.active { opacity: 1; }
+
+.sizes { margin-top: 30px; }
+.sizes span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 12px;
+    display: block;
+}
+.size-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.size-options button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e5e5e5;
+    background: #f7f7f7;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+    font-weight: 600;
+}
+.size-options button.active {
+    background: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+.buy-btn {
+    margin-top: 30px;
+    width: 220px;
+    height: 55px;
+    background: linear-gradient(135deg, #00e676, #00c853);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.buy-btn:hover { transform: scale(1.05); }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 15px 10px;
+    }
+    .logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-right: 10px;
+    }
+    .logo img { height: 60px; }
+    nav { margin-top: 0; flex: 1; }
+    nav ul { flex-direction: row; justify-content: space-around; gap: 5px; }
+    nav a { font-size: 16px; padding: 5px 8px; }
+
+    /* Card mobile */
+    .card { width: 95%; padding: 20px; margin: 10px auto; flex-direction: column; align-items: center; }
+    .img-box { position: relative; left: 0; top: 0; transform: none; z-index: 1; margin-bottom: 20px; }
+    .img-box img { width: 90%; transform: rotate(0deg); }
+    .info { margin-left: 0; transform: none; margin-top: 0; }
+    .bg-text { font-size: 120px; top: -15%; left: 50%; transform: translateX(-50%); }
+    .thumbs { justify-content: center; }
+}
+
+/* Fim do mobile */
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo"><img src="https://github.com/kauzzwwq/projeto3/blob/main/logo.png?raw=true"></div>
-<nav>
-<ul>
-<li><a id="menu-men">MEN</a></li>
-<li><a id="menu-women">WOMEN</a></li>
-<li><a id="menu-kids">KIDS</a></li>
-<li><a id="menu-contato">CONTATO</a></li>
-</ul>
-</nav>
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a id="menu-men">MEN</a></li>
+            <li><a id="menu-women">WOMEN</a></li>
+            <li><a id="menu-kids">KIDS</a></li>
+            <li><a id="menu-contato">CONTATO</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- Card principal -->
-<div class="card" id="shoe-card">
-<div class="bg-text" id="bgText">VAPORFLY GREEN</div>
-<div class="img-box">
-<img id="main-shoe" src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true">
-</div>
-<div class="info" id="info-card">
-<span id="shoe-category">Men's Shoes</span>
-<h1>NIKE<br>VAPORFLY 3</h1>
-<h2>$160</h2>
-<p id="shoe-description">O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...</p>
-<div class="thumbs">
-<img src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png.png?raw=true" onclick="changeShoe('pink')">
-<img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true" class="active" onclick="changeShoe('green')">
-<img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png.png?raw=true" onclick="changeShoe('red')">
-</div>
-<div class="sizes" id="sizes-wrapper">
-<span>Selecione o Tamanho</span>
-<div class="size-options" id="size-options">
-<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>
-</div>
-</div>
-<button class="buy-btn" id="buy-btn">BUY NOW</button>
-</div>
-</div>
-
-<!-- Contato -->
-<div id="contact-section">
-<h1>CONTATO</h1>
-<p>GitHub: <a href="https://github.com/kauzzwwq" target="_blank">https://github.com/kauzzwwq</a></p>
-<p>WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">https://wa.me/5549999695059</a></p>
-<button class="buy-btn" id="back-btn">Voltar para os tênis</button>
+<div class="card">
+    <div class="bg-text" id="bgText">VAPORFLY PINK</div>
+    <div class="img-box">
+        <img id="main-shoe" src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png">
+    </div>
+    <div class="info">
+        <span>Men's Shoes</span>
+        <h1>NIKE<br>VAPORFLY 3</h1>
+        <h2>$160</h2>
+        <p>
+            O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.
+        </p>
+        <div class="thumbs">
+            <img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png" onclick="changeShoe('pink')">
+            <img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" class="active" onclick="changeShoe('green')">
+            <img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png" onclick="changeShoe('red')">
+        </div>
+        <div class="sizes">
+            <span>Selecione o Tamanho</span>
+            <div class="size-options">
+                <button>38</button>
+                <button>39</button>
+                <button>40</button>
+                <button>41</button>
+                <button>42</button>
+            </div>
+        </div>
+        <button class="buy-btn">BUY NOW</button>
+    </div>
 </div>
 
 <script>
-const mainShoe = document.getElementById('main-shoe');
-const bgText = document.getElementById('bgText');
-const buyBtn = document.getElementById('buy-btn');
-const sizeOptions = document.getElementById('size-options');
-const shoeCategory = document.getElementById('shoe-category');
-const shoeDescription = document.getElementById('shoe-description');
-const shoeCard = document.getElementById('shoe-card');
-const contactSection = document.getElementById('contact-section');
-
-function selectSize() {
-  const buttons = document.querySelectorAll('.size-options button');
-  buttons.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      buttons.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
+// seleção de tamanho
+const sizes = document.querySelectorAll('.size-options button');
+sizes.forEach(btn => {
+    btn.addEventListener('click', () => {
+        sizes.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
     });
-  });
+});
+
+// trocar tênis
+function changeShoe(color) {
+    const img = document.getElementById('main-shoe');
+    const bg = document.getElementById('bgText');
+    const thumbs = document.querySelectorAll('.thumbs img');
+    const btn = document.querySelector('.buy-btn');
+
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumbs.forEach(t => t.style.borderBottomColor = "transparent");
+
+    if (color === 'green') {
+        img.src = "https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png";
+        bg.innerText = "VAPORFLY GREEN";
+        bg.style.color = "rgba(0,200,83,0.05)";
+        document.body.style.background = "linear-gradient(135deg, #00c853, #003d1f)";
+        btn.style.background = "linear-gradient(135deg, #00e676, #00c853)";
+        thumbs[1].classList.add("active");
+        thumbs[1].style.borderBottomColor = "#00e676";
+    }
+    if (color === 'pink') {
+        img.src = "https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png";
+        bg.innerText = "VAPORFLY PINK";
+        bg.style.color = "rgba(255,0,204,0.1)";
+        document.body.style.background = "linear-gradient(135deg, #ff00cc, #3333ff)";
+        btn.style.background = "linear-gradient(135deg, #ff0099, #ff4d4d)";
+        thumbs[0].classList.add("active");
+        thumbs[0].style.borderBottomColor = "#ff0099";
+    }
+    if (color === 'red') {
+        img.src = "https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png";
+        bg.innerText = "VAPORFLY RED";
+        bg.style.color = "rgba(255,23,68,0.1)";
+        document.body.style.background = "linear-gradient(135deg, #ff1744, #5a0000)";
+        btn.style.background = "linear-gradient(135deg, #ff5252, #ff1744)";
+        thumbs[2].classList.add("active");
+        thumbs[2].style.borderBottomColor = "#ff1744";
+    }
 }
-selectSize();
-
-function changeShoe(color){
-  const thumbs=document.querySelectorAll('.thumbs img');
-  thumbs.forEach(t=>{t.classList.remove('active'); t.style.borderBottomColor="transparent";});
-  if(color==='green'){
-    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true";
-    bgText.innerText="VAPORFLY GREEN"; bgText.style.color="rgba(0,200,83,0.05)";
-    document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
-    buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
-    thumbs[1].classList.add("active"); thumbs[1].style.borderBottomColor="#00e676";
-    shoeDescription.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...";
-  }
-  if(color==='pink'){
-    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png.png?raw=true";
-    bgText.innerText="VAPORFLY PINK"; bgText.style.color="rgba(255,0,204,0.1)";
-    document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
-    buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
-    thumbs[0].classList.add("active"); thumbs[0].style.borderBottomColor="#ff0099";
-    shoeDescription.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo...";
-  }
-  if(color==='red'){
-    mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png.png?raw=true";
-    bgText.innerText="VAPORFLY RED"; bgText.style.color="rgba(255,23,68,0.1)";
-    document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
-    buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
-    thumbs[2].classList.add("active"); thumbs[2].style.borderBottomColor="#ff1744";
-    shoeDescription.innerText="O Air Max 90 combina conforto e estilo clássico com tecnologia moderna...";
-  }
-}
-
-// Men/Women/Kids apenas mudam tamanhos
-document.getElementById('menu-men').addEventListener('click',()=>{
-  sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
-  shoeCategory.innerText="Men's Shoes";
-  selectSize();
-});
-document.getElementById('menu-women').addEventListener('click',()=>{
-  sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
-  shoeCategory.innerText="Women's Shoes";
-  selectSize();
-});
-document.getElementById('menu-kids').addEventListener('click',()=>{
-  sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
-  shoeCategory.innerText="Kids Shoes";
-  selectSize();
-});
-
-// Contato
-document.getElementById('menu-contato').addEventListener('click',()=>{
-  shoeCard.style.display = 'none';
-  contactSection.style.display = 'block';
-});
-
-// Botão voltar
-document.getElementById('back-btn').addEventListener('click',()=>{
-  contactSection.style.display = 'none';
-  shoeCard.style.display = 'flex';
-});
 </script>
 
 </body>
