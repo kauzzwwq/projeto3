@@ -76,10 +76,14 @@ document.getElementById('menu-contato').addEventListener('click',()=>{
   contactSection.style.display='block';
 });
 
-// HOME - voltar para os tênis
+// HOME - volta para a página dos tênis
 document.getElementById('menu-home').addEventListener('click', ()=>{
-    contactSection.style.display = 'none';  // esconde contato
-    shoeCard.style.display = 'flex';        // mostra os tênis
+    // Esconde contato se estiver aberto
+    contactSection.style.display = 'none';
+    // Mostra o card dos tênis
+    shoeCard.style.display = 'flex';
+    // Opcional: resetar para tênis verde
+    changeShoe('green');
 });
 
 // VOLTAR PARA OS TÊNIS
