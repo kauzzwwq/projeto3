@@ -158,10 +158,10 @@ nav a:hover{color:#ff0099;}
 <h1>NIKE<br>VAPORFLY 3</h1>
 <h2>$160</h2>
 <p>O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo.</p>
-<div class="thumbs">
-<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png" class="active" onclick="changeShoe('pink')">
-<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" onclick="changeShoe('green')">
-<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png" onclick="changeShoe('red')">
+<div class="thumbs" id="thumbs-container">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png" class="active" data-color="pink">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" data-color="green">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png" data-color="red">
 </div>
 <div class="sizes" id="sizes-div">
 <span>Selecione o Tamanho</span>
@@ -174,23 +174,30 @@ nav a:hover{color:#ff0099;}
 </div>
 
 <script>
-const infoCard=document.getElementById('info-card');
 const mainShoe=document.getElementById('main-shoe');
 const bgText=document.getElementById('bgText');
 const buyBtn=document.getElementById('buy-btn');
 const sizeOptions=document.getElementById('size-options');
 const sizesDiv=document.getElementById('sizes-div');
+const thumbsContainer=document.getElementById('thumbs-container');
 
-sizesDiv.querySelectorAll('button').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-        sizesDiv.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
+function isMobile() { return window.innerWidth <= 768; }
+
+// Selecao de tamanho
+function setupSizes() {
+    const buttons=sizesDiv.querySelectorAll('button');
+    buttons.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            buttons.forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+        });
     });
-});
+}
+setupSizes();
 
 // Trocar tênis
 function changeShoe(color){
-    const thumbs=document.querySelectorAll('.thumbs img');
+    const thumbs=thumbsContainer.querySelectorAll('img');
     thumbs.forEach(t=>{t.classList.remove('active');t.style.borderBottomColor="transparent";});
     if(color==='green'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png";
@@ -198,15 +205,13 @@ function changeShoe(color){
         document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
         buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
         thumbs[1].classList.add("active");thumbs[1].style.borderBottomColor="#00e676";
-    }
-    if(color==='pink'){
+    } else if(color==='pink'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png";
         bgText.innerText="VAPORFLY PINK";bgText.style.color="rgba(255,0,204,0.1)";
         document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
         buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
         thumbs[0].classList.add("active");thumbs[0].style.borderBottomColor="#ff0099";
-    }
-    if(color==='red'){
+    } else if(color==='red'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png";
         bgText.innerText="AIR MAX 90";bgText.style.color="rgba(255,23,68,0.1)";
         document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
@@ -215,20 +220,28 @@ function changeShoe(color){
     }
 }
 
-// MENU - altera somente tamanhos no mobile
-function isMobile() { return window.innerWidth <= 768; }
+// Delegação de evento para thumbs
+thumbsContainer.addEventListener('click', e=>{
+    if(e.target.tagName==='IMG' && e.target.dataset.color) changeShoe(e.target.dataset.color);
+});
+
+// Menu - altera somente tamanhos no mobile
 document.getElementById('menu-men').addEventListener('click',()=>{
     if(isMobile()) sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
+    setupSizes();
 });
 document.getElementById('menu-women').addEventListener('click',()=>{
     if(isMobile()) sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
+    setupSizes();
 });
 document.getElementById('menu-kids').addEventListener('click',()=>{
     if(isMobile()) sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
+    setupSizes();
 });
 
-// CONTATO
+// Contato
 document.getElementById('menu-contato').addEventListener('click',()=>{
+    const infoCard=document.getElementById('info-card');
     infoCard.innerHTML=`<h1 style="font-size:40px;color:#555;margin-bottom:20px;">CONTATO</h1>
     <p>GitHub: <a href="https://github.com/kauzzwwq" target="_blank">kauzzwwq</a></p>
     <p>WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">+55 49 99969-5059</a></p>
@@ -238,8 +251,11 @@ document.getElementById('menu-contato').addEventListener('click',()=>{
     buyBtn.style.display='none';
     sizesDiv.style.display='none';
 
-    document.getElementById('back-btn').addEventListener('click',()=>{ location.reload(); });
+    document.getElementById('back-btn').addEventListener('click',()=>{
+        location.reload();
+    });
 });
 </script>
+
 </body>
 </html>
