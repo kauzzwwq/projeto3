@@ -18,9 +18,6 @@ function selectSize(){
     });
   });
 }
-document.getElementById('home-btn').addEventListener('click', () => {
-    window.location.reload();
-});
 selectSize();
 
 // TROCAR TÊNIS
