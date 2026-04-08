@@ -63,7 +63,7 @@ button#back-btn{margin-top:20px;background:#ff0099;}
 <img id="main-shoe" src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png">
 </div>
 <div class="info" id="info-card">
-<span>Men's Shoes</span>
+<span id="category-text">Men's Shoes</span>
 <h1>NIKE<br>VAPORFLY 3</h1>
 <h2>$160</h2>
 <p>O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.</p>
@@ -92,22 +92,30 @@ button#back-btn{margin-top:20px;background:#ff0099;}
 </div>
 
 <script>
-// elementos
+// ELEMENTOS
 const card = document.getElementById('card');
 const mainShoe = document.getElementById('main-shoe');
 const bgText = document.getElementById('bgText');
 const buyBtn = document.getElementById('buy-btn');
 const sizeOptions = document.getElementById('size-options');
 const contact = document.getElementById('contact');
+const categoryText = document.getElementById('category-text');
 
-// seleção de tamanho
-function initSizeButtons() {
-    const sizeBtns = document.querySelectorAll('.size-options button');
-    sizeBtns.forEach(btn=>btn.addEventListener('click',()=>{sizeBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');}));
+// FUNÇÃO DE TAMANHOS
+function setSizes(sizesArray){
+    sizeOptions.innerHTML = '';
+    sizesArray.forEach(s=>{
+        const btn = document.createElement('button');
+        btn.innerText = s;
+        btn.addEventListener('click',()=>{
+            document.querySelectorAll('.size-options button').forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+        sizeOptions.appendChild(btn);
+    });
 }
-initSizeButtons();
 
-// trocar tênis
+// FUNÇÃO DE MUDAR TÊNIS
 function changeShoe(color){
     const thumbs=document.querySelectorAll('.thumbs img');
     const infoH1=document.querySelector('.info h1');
@@ -144,35 +152,35 @@ function changeShoe(color){
 
 // MENU
 document.getElementById('menu-men').addEventListener('click',()=>{
+    setSizes([38,39,40,41,42]);
+    categoryText.innerText = "Men's Shoes";
     card.style.display='flex';
     contact.style.display='none';
-    sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
-    initSizeButtons();
 });
-
 document.getElementById('menu-women').addEventListener('click',()=>{
+    setSizes([35,36,37,38]);
+    categoryText.innerText = "Women's Shoes";
     card.style.display='flex';
     contact.style.display='none';
-    sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
-    initSizeButtons();
 });
-
 document.getElementById('menu-kids').addEventListener('click',()=>{
+    setSizes([30,31,32,33]);
+    categoryText.innerText = "Kids' Shoes";
     card.style.display='flex';
     contact.style.display='none';
-    sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
-    initSizeButtons();
 });
-
 document.getElementById('menu-contact').addEventListener('click',()=>{
     card.style.display='none';
     contact.style.display='block';
 });
-
 document.getElementById('back-btn').addEventListener('click',()=>{
     contact.style.display='none';
     card.style.display='flex';
 });
+
+// Inicializa a página com tênis rosa
+changeShoe('pink');
+setSizes([38,39,40,41,42]);
 </script>
 
 </body>
