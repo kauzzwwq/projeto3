@@ -1,4 +1,5 @@
 // ELEMENTOS
+const shoeTitle = document.getElementById('shoe-title');
 const mainShoe = document.getElementById('main-shoe');
 const bgText = document.getElementById('bgText');
 const buyBtn = document.getElementById('buy-btn');
@@ -33,6 +34,7 @@ function changeShoe(color){
   if(color==='green'){
     mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png?raw=true";
     bgText.innerText="VAPORFLY GREEN";
+    shoeTitle.innerHTML = "NIKE<br>VAPORFLY 3";
     bgText.style.color="rgba(0,200,83,0.05)";
     document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
     buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
@@ -43,6 +45,7 @@ function changeShoe(color){
 
   if(color==='pink'){
     mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenis1.png?raw=true";
+    shoeTitle.innerHTML = "NIKE<br>VAPORFLY 3";
     bgText.innerText="VAPORFLY PINK";
     bgText.style.color="rgba(255,0,204,0.1)";
     document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
@@ -54,7 +57,8 @@ function changeShoe(color){
 
   if(color==='red'){
     mainShoe.src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png?raw=true";
-    bgText.innerText="AIR MAX EX 90";
+    shoeTitle.innerHTML = "NIKE<br>AIR MAX EX 90";
+    bgText.innerText = "AIR MAX EX 90";
     bgText.style.color="rgba(255,23,68,0.1)";
     document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
     buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
