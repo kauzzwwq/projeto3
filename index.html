@@ -15,54 +15,48 @@ body {
 header {
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    padding:20px 30px;
-    position:sticky;
-    top:0;
-    background:white;
-    z-index:1000;
+    justify-content:center;
+    position:relative;
+    padding:25px 0;
 }
-.logo img {
-    height:60px;
+.logo {
+    position:absolute;
+    top:20px;
+    left:20px;
 }
-nav ul {
-    display:flex;
-    gap:15px;
-    list-style:none;
-    padding:0;
-    margin:0;
-}
+.logo img { height:100px; }
+nav { margin-top:30px; }
+nav ul { display:flex; gap:15px; list-style:none; padding:0; margin:0; }
 nav a {
     text-decoration:none;
     color:black;
     font-weight:600;
-    font-size:18px;
-    padding:8px 12px;
+    font-size:22px;
+    padding:10px 15px;
     letter-spacing:1px;
     transition:0.3s;
     cursor:pointer;
 }
 nav a:hover{color:#ff0099;}
 .card {
-    width:90%;
-    max-width:1200px;
-    margin:50px auto;
+    width:80%;
+    margin:30px auto;
     background:white;
-    padding:50px;
+    padding:60px;
     position:relative;
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:space-between;
-    flex-wrap:wrap;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    gap:40px;
+    overflow:visible;
 }
 .bg-text {
     position:absolute;
-    top:20px;
+    top:-5%;
     left:50%;
     transform:translateX(-50%);
-    font-size:120px;
+    letter-spacing:-5px;
+    font-size:180px;
     font-weight:800;
     color:rgba(255,0,204,0.05);
     white-space:nowrap;
@@ -70,29 +64,31 @@ nav a:hover{color:#ff0099;}
     z-index:0;
 }
 .img-box {
-    flex:1 1 400px;
-    display:flex;
-    justify-content:center;
+    position:absolute;
+    left:-120px;
+    top:45%;
+    transform:translateY(-50%);
     z-index:1;
 }
 .img-box img {
-    width:400px;
-    max-width:100%;
-    transform:rotate(-20deg);
+    width:800px;
+    transform:rotate(-40deg);
     transition:0.4s;
 }
 .info {
-    flex:1 1 400px;
+    flex:1;
+    margin-left:730px;
+    margin-top:180px;
+    transform:translateY(-110px);
     z-index:1;
-    margin-left:20px;
 }
-.info span {font-size:12px;color:#888;}
-.info h1 {font-size:36px;margin:5px 0 10px;}
-.info h2 {font-size:20px;margin:0 0 20px;}
-.info p {font-size:14px;color:#555;line-height:1.6;}
-.thumbs {display:flex;gap:10px;margin-top:20px;}
+.info span{font-size:11px;color:#888;letter-spacing:1px;}
+.info h1{font-size:52px;margin:5px 0 15px;}
+.info h2{font-size:18px;margin:0 0 20px;}
+.info p{font-size:13px;color:#555;line-height:1.8;max-width:400px;}
+.thumbs {display:flex;gap:15px;margin-top:30px;}
 .thumbs img {
-    width:80px;
+    width:120px;
     cursor:pointer;
     transition:0.3s;
     opacity:0.6;
@@ -100,19 +96,28 @@ nav a:hover{color:#ff0099;}
 }
 .thumbs img:hover{transform:scale(1.1);opacity:1;}
 .thumbs img.active{opacity:1;border-bottom:3px solid;}
-.sizes {margin-top:20px;}
-.sizes span {display:block;font-size:14px;font-weight:600;margin-bottom:8px;}
-.size-options {display:flex;gap:8px;flex-wrap:wrap;}
+.sizes {margin-top:30px;}
+.sizes span{display:block;font-size:13px;font-weight:600;margin-bottom:12px;}
+.size-options {display:flex;gap:10px;flex-wrap:wrap;}
 .size-options button {
-    width:45px;height:45px;border:1px solid #e5e5e5;background:#f7f7f7;border-radius:8px;cursor:pointer;transition:0.25s;font-weight:600;
+    width:50px;
+    height:50px;
+    border:1px solid #e5e5e5;
+    background:#f7f7f7;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.25s;
+    font-weight:600;
 }
-.size-options button.active {background:black;color:white;transform:scale(1.05);}
+.size-options button.active{background:black;color:white;transform:scale(1.05);}
 .buy-btn {
-    margin-top:25px;width:200px;height:50px;
+    margin-top:30px;
+    width:220px;
+    height:55px;
     background:linear-gradient(135deg,#ff0099,#ff4d4d);
-    color:white;
+    color:#fff;
     border:none;
-    border-radius:25px;
+    border-radius:30px;
     font-weight:600;
     letter-spacing:1px;
     cursor:pointer;
@@ -120,17 +125,26 @@ nav a:hover{color:#ff0099;}
 }
 .buy-btn:hover{transform:scale(1.05);}
 
-/* RESPONSIVO */
+/* MOBILE ONLY */
 @media(max-width:768px){
-    .card {flex-direction:column;align-items:center;padding:30px;margin:20px;}
-    .img-box img{width:250px;}
-    .info h1{font-size:26px;}
-    .info h2{font-size:18px;}
-    .info p{font-size:13px;}
-    .bg-text{font-size:50px;top:10px;transform:translateX(-50%);}
-    nav ul{flex-wrap:wrap;justify-content:center;gap:10px;}
-    nav a{font-size:14px;padding:6px 8px;}
-    header{padding:15px 20px;}
+    header { justify-content:flex-start; padding:15px 20px; }
+    .logo { position:static; margin-right:20px; }
+    nav ul { flex-wrap:wrap; justify-content:flex-start; gap:8px; margin-top:10px; }
+    nav a { font-size:14px; padding:6px 8px; }
+    .card {
+        padding:30px;
+        margin:20px auto;
+        flex-direction:column;
+        align-items:center;
+    }
+    .img-box { position:static; transform:none; margin-bottom:20px; }
+    .img-box img{ width:250px; }
+    .info { margin-left:0; transform:none; text-align:center; }
+    .info h1{ font-size:26px; }
+    .info h2{ font-size:18px; }
+    .info p{ font-size:13px; }
+    .bg-text{ font-size:50px; top:10px; transform:translateX(-50%); }
+    .thumbs img { width:70px; }
 }
 </style>
 </head>
@@ -148,7 +162,7 @@ nav a:hover{color:#ff0099;}
 </nav>
 </header>
 
-<div class="card" id="card">
+<div class="card">
 <div class="bg-text" id="bgText">VAPORFLY PINK</div>
 <div class="img-box">
 <img id="main-shoe" src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png">
@@ -181,9 +195,8 @@ const sizeOptions=document.getElementById('size-options');
 const sizesDiv=document.getElementById('sizes-div');
 const thumbsContainer=document.getElementById('thumbs-container');
 
-function isMobile() { return window.innerWidth <= 768; }
+function isMobile(){ return window.innerWidth <= 768; }
 
-// Selecao de tamanho
 function setupSizes() {
     const buttons=sizesDiv.querySelectorAll('button');
     buttons.forEach(btn=>{
@@ -195,49 +208,37 @@ function setupSizes() {
 }
 setupSizes();
 
-// Trocar tênis
 function changeShoe(color){
     const thumbs=thumbsContainer.querySelectorAll('img');
-    thumbs.forEach(t=>{t.classList.remove('active');t.style.borderBottomColor="transparent";});
+    thumbs.forEach(t=>{t.classList.remove('active'); t.style.borderBottomColor='transparent';});
     if(color==='green'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png";
-        bgText.innerText="VAPORFLY GREEN";bgText.style.color="rgba(0,200,83,0.05)";
+        bgText.innerText="VAPORFLY GREEN"; bgText.style.color="rgba(0,200,83,0.05)";
         document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
         buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
-        thumbs[1].classList.add("active");thumbs[1].style.borderBottomColor="#00e676";
+        thumbs[1].classList.add("active"); thumbs[1].style.borderBottomColor="#00e676";
     } else if(color==='pink'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png";
-        bgText.innerText="VAPORFLY PINK";bgText.style.color="rgba(255,0,204,0.1)";
+        bgText.innerText="VAPORFLY PINK"; bgText.style.color="rgba(255,0,204,0.1)";
         document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
         buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
-        thumbs[0].classList.add("active");thumbs[0].style.borderBottomColor="#ff0099";
+        thumbs[0].classList.add("active"); thumbs[0].style.borderBottomColor="#ff0099";
     } else if(color==='red'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png";
-        bgText.innerText="AIR MAX 90";bgText.style.color="rgba(255,23,68,0.1)";
+        bgText.innerText="AIR MAX 90"; bgText.style.color="rgba(255,23,68,0.1)";
         document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
         buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
-        thumbs[2].classList.add("active");thumbs[2].style.borderBottomColor="#ff1744";
+        thumbs[2].classList.add("active"); thumbs[2].style.borderBottomColor="#ff1744";
     }
 }
-
-// Delegação de evento para thumbs
 thumbsContainer.addEventListener('click', e=>{
     if(e.target.tagName==='IMG' && e.target.dataset.color) changeShoe(e.target.dataset.color);
 });
 
-// Menu - altera somente tamanhos no mobile
-document.getElementById('menu-men').addEventListener('click',()=>{
-    if(isMobile()) sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
-    setupSizes();
-});
-document.getElementById('menu-women').addEventListener('click',()=>{
-    if(isMobile()) sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
-    setupSizes();
-});
-document.getElementById('menu-kids').addEventListener('click',()=>{
-    if(isMobile()) sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
-    setupSizes();
-});
+// Mobile menu apenas muda tamanhos
+document.getElementById('menu-men').addEventListener('click',()=>{ if(isMobile()) sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>'; setupSizes(); });
+document.getElementById('menu-women').addEventListener('click',()=>{ if(isMobile()) sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>'; setupSizes(); });
+document.getElementById('menu-kids').addEventListener('click',()=>{ if(isMobile()) sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>'; setupSizes(); });
 
 // Contato
 document.getElementById('menu-contato').addEventListener('click',()=>{
@@ -250,10 +251,7 @@ document.getElementById('menu-contato').addEventListener('click',()=>{
     bgText.innerText='';
     buyBtn.style.display='none';
     sizesDiv.style.display='none';
-
-    document.getElementById('back-btn').addEventListener('click',()=>{
-        location.reload();
-    });
+    document.getElementById('back-btn').addEventListener('click',()=>{ location.reload(); });
 });
 </script>
 
