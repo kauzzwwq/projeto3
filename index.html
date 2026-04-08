@@ -6,7 +6,7 @@
 <title>Nike.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-body {margin:0;font-family:'Poppins',sans-serif;transition:0.5s;}
+body {margin:0;font-family:'Poppins',sans-serif;transition:0.5s;background:linear-gradient(135deg,#ff00cc,#3333ff);}
 header{display:flex;align-items:center;justify-content:center;position:relative;padding:25px 0;}
 .logo{position:absolute;top:20px;left:20px;}
 .logo img{height:100px;}
@@ -15,7 +15,7 @@ nav ul{display:flex;gap:15px;list-style:none;padding:0;margin:0;}
 nav a{text-decoration:none;color:black;font-weight:600;font-size:22px;padding:10px 15px;letter-spacing:1px;transition:0.3s;cursor:pointer;}
 nav a:hover{color:white;}
 .card{width:90%;max-width:1200px;margin:30px auto;background:white;padding:40px;position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:40px;overflow:visible;transition:0.3s;}
-.bg-text{position:absolute;top:-5%;left:50%;transform:translateX(-50%);letter-spacing:-5px;font-size:120px;font-weight:800;color:rgba(0,200,83,0.05);white-space:nowrap;pointer-events:none;z-index:0;}
+.bg-text{position:absolute;top:-5%;left:50%;transform:translateX(-50%);letter-spacing:-5px;font-size:120px;font-weight:800;color:rgba(255,0,204,0.1);white-space:nowrap;pointer-events:none;z-index:0;}
 .img-box{flex:1;min-width:300px;position:relative;}
 .img-box img{width:100%;max-width:600px;transform:rotate(-40deg);transition:0.4s;}
 .info{flex:1;min-width:280px;z-index:1;}
@@ -32,13 +32,13 @@ nav a:hover{color:white;}
 .size-options{display:flex;gap:10px;flex-wrap:wrap;}
 .size-options button{width:50px;height:50px;border:1px solid #e5e5e5;background:#f7f7f7;border-radius:10px;cursor:pointer;transition:0.25s;font-weight:600;}
 .size-options button.active{background:black;color:white;transform:scale(1.05);}
-.buy-btn{margin-top:20px;width:200px;height:50px;background:linear-gradient(135deg,#00e676,#00c853);color:#fff;border:none;border-radius:30px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:0.3s;}
+.buy-btn{margin-top:20px;width:200px;height:50px;background:linear-gradient(135deg,#ff0099,#ff4d4d);color:#fff;border:none;border-radius:30px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:0.3s;}
 .buy-btn:hover{transform:scale(1.05);}
 .contact{display:none;width:90%;max-width:600px;margin:50px auto;text-align:center;}
 .contact h1{font-size:36px;margin-bottom:20px;}
 .contact a{display:inline-block;margin:10px;padding:12px 25px;background:#333;color:#fff;border-radius:25px;text-decoration:none;transition:0.3s;}
 .contact a:hover{background:#555;}
-button#back-btn{margin-top:20px;background:#00c853;}
+button#back-btn{margin-top:20px;background:#ff0099;}
 @media (max-width:768px){.card{flex-direction:column;padding:20px;}.bg-text{font-size:80px;}.info h1{font-size:28px;}.img-box img{transform:rotate(-30deg);}}
 </style>
 </head>
@@ -58,9 +58,9 @@ button#back-btn{margin-top:20px;background:#00c853;}
 
 <!-- CARD DE TÊNIS -->
 <div class="card" id="card">
-<div class="bg-text" id="bgText">VAPORFLY GREEN</div>
+<div class="bg-text" id="bgText">VAPORFLY PINK</div>
 <div class="img-box">
-<img id="main-shoe" src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png">
+<img id="main-shoe" src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png">
 </div>
 <div class="info" id="info-card">
 <span>Men's Shoes</span>
@@ -68,8 +68,8 @@ button#back-btn{margin-top:20px;background:#00c853;}
 <h2>$160</h2>
 <p>O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.</p>
 <div class="thumbs">
-<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png" onclick="changeShoe('pink')">
-<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" class="active" onclick="changeShoe('green')">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png" class="active" onclick="changeShoe('pink')">
+<img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png" onclick="changeShoe('green')">
 <img src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png" onclick="changeShoe('red')">
 </div>
 <div class="sizes" id="sizes-container">
@@ -94,12 +94,10 @@ button#back-btn{margin-top:20px;background:#00c853;}
 <script>
 // elementos
 const card = document.getElementById('card');
-const infoCard = document.getElementById('info-card');
 const mainShoe = document.getElementById('main-shoe');
 const bgText = document.getElementById('bgText');
 const buyBtn = document.getElementById('buy-btn');
 const sizeOptions = document.getElementById('size-options');
-const sizesContainer = document.getElementById('sizes-container');
 const contact = document.getElementById('contact');
 
 // seleção de tamanho
@@ -149,10 +147,6 @@ document.getElementById('menu-men').addEventListener('click',()=>{
     card.style.display='flex';
     contact.style.display='none';
     sizeOptions.innerHTML='<button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>';
-    mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisva.png.png";
-    bgText.innerText='VAPORFLY GREEN'; bgText.style.color="rgba(0,200,83,0.05)";
-    buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
-    changeShoe('green');
     initSizeButtons();
 });
 
@@ -160,7 +154,6 @@ document.getElementById('menu-women').addEventListener('click',()=>{
     card.style.display='flex';
     contact.style.display='none';
     sizeOptions.innerHTML='<button>35</button><button>36</button><button>37</button><button>38</button>';
-    changeShoe('pink');
     initSizeButtons();
 });
 
@@ -168,7 +161,6 @@ document.getElementById('menu-kids').addEventListener('click',()=>{
     card.style.display='flex';
     contact.style.display='none';
     sizeOptions.innerHTML='<button>30</button><button>31</button><button>32</button><button>33</button>';
-    changeShoe('green');
     initSizeButtons();
 });
 
