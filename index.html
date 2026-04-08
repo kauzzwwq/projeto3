@@ -64,7 +64,7 @@ nav a:hover{color:white;}
     left:50%;
     transform:translateX(-50%);
     letter-spacing:-5px;
-    font-size:179px; /* diminuiu 1 grau */
+    font-size:179px;
     font-weight:800;
     color:rgba(0,200,83,0.05);
     white-space:nowrap;
@@ -161,10 +161,10 @@ nav a:hover{color:white;}
 @media(max-width:768px){
   header{
     flex-direction:row;
-    justify-content:flex-start; /* logo no canto esquerdo */
+    justify-content:flex-start;
     padding:15px 10px;
     margin-top:0;
-    background:rgba(255,255,255,0.9); /* fundo leve para destacar logo */
+    background:rgba(255,255,255,0.9);
   }
   .logo{
     position:relative;
@@ -353,6 +353,11 @@ document.getElementById('menu-contato').addEventListener('click',()=>{
 document.getElementById('back-btn').addEventListener('click',()=>{
   contactSection.style.display='none';
   shoeCard.style.display='flex';
+});
+
+// COMPRAR - Indisponível
+buyBtn.addEventListener('click',()=>{
+  alert('Indisponível no momento');
 });
 </script>
 
