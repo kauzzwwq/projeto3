@@ -7,7 +7,7 @@ const shoeCategory = document.getElementById('shoe-category');
 const shoeDescription = document.getElementById('shoe-description');
 const shoeCard = document.getElementById('shoe-card');
 const contactSection = document.getElementById('contact-section');
-
+//oi
 // SELECIONAR TAMANHO
 function selectSize(){
   const buttons = document.querySelectorAll('.size-options button');
