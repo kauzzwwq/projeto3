@@ -7,11 +7,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 body {margin:0;font-family:'Poppins',sans-serif;transition:0.5s;background:linear-gradient(135deg,#ff00cc,#3333ff);}
-header{display:flex;align-items:center;justify-content:center;position:relative;padding:25px 0;}
-.logo{position:absolute;top:20px;left:20px;}
-.logo img{height:100px;}
-nav{margin-top:30px;}
-nav ul{display:flex;gap:15px;list-style:none;padding:0;margin:0;}
+header{display:flex;align-items:center;justify-content:center;position:relative;padding:25px 0;flex-wrap:wrap;}
+.logo{position:relative;top:0;left:0;margin-bottom:15px;}
+.logo img{height:80px;}
+nav{margin-top:0;}
+nav ul{display:flex;gap:15px;list-style:none;padding:0;margin:0;flex-wrap:wrap;justify-content:center;}
 nav a{text-decoration:none;color:black;font-weight:600;font-size:22px;padding:10px 15px;letter-spacing:1px;transition:0.3s;cursor:pointer;}
 nav a:hover{color:white;}
 .card{width:90%;max-width:1200px;margin:30px auto;background:white;padding:40px;position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:40px;overflow:visible;transition:0.3s;}
@@ -39,7 +39,17 @@ nav a:hover{color:white;}
 .contact a{display:inline-block;margin:10px;padding:12px 25px;background:#333;color:#fff;border-radius:25px;text-decoration:none;transition:0.3s;}
 .contact a:hover{background:#555;}
 button#back-btn{margin-top:20px;background:#ff0099;}
-@media (max-width:768px){.card{flex-direction:column;padding:20px;}.bg-text{font-size:80px;}.info h1{font-size:28px;}.img-box img{transform:rotate(-30deg);}}
+
+/* RESPONSIVO */
+@media (max-width:768px){
+    header{flex-direction:column;}
+    .logo{margin-bottom:15px;}
+    nav ul{flex-direction:column;gap:10px;}
+    .bg-text{font-size:80px;}
+    .info h1{font-size:28px;}
+    .img-box img{transform:rotate(-30deg);}
+    .card{padding:20px;}
+}
 </style>
 </head>
 <body>
@@ -127,8 +137,6 @@ function changeShoe(color){
         document.body.style.background="linear-gradient(135deg,#00c853,#003d1f)";
         buyBtn.style.background="linear-gradient(135deg,#00e676,#00c853)";
         thumbs[1].classList.add("active"); thumbs[1].style.borderBottomColor="#00e676";
-        infoH1.innerHTML="NIKE<br>VAPORFLY 3";
-        infoP.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.";
     }
     if(color==='pink'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenis1.png.png";
@@ -136,8 +144,6 @@ function changeShoe(color){
         document.body.style.background="linear-gradient(135deg,#ff00cc,#3333ff)";
         buyBtn.style.background="linear-gradient(135deg,#ff0099,#ff4d4d)";
         thumbs[0].classList.add("active"); thumbs[0].style.borderBottomColor="#ff0099";
-        infoH1.innerHTML="NIKE<br>VAPORFLY 3";
-        infoP.innerText="O Nike Vaporfly 3 foi desenvolvido para quem busca velocidade e desempenho máximo. Com tecnologia avançada e design leve, ele proporciona maior retorno de energia a cada passada, ajudando você a ir mais longe com menos esforço. Sua estrutura respirável garante conforto durante toda a corrida, enquanto a placa de fibra de carbono impulsiona seu movimento para frente.";
     }
     if(color==='red'){
         mainShoe.src="https://raw.githubusercontent.com/kauzzwwq/projeto3/main/tenisr.png.png";
@@ -145,40 +151,17 @@ function changeShoe(color){
         document.body.style.background="linear-gradient(135deg,#ff1744,#5a0000)";
         buyBtn.style.background="linear-gradient(135deg,#ff5252,#ff1744)";
         thumbs[2].classList.add("active"); thumbs[2].style.borderBottomColor="#ff1744";
-        infoH1.innerHTML="NIKE<br>AIR MAX 90";
-        infoP.innerText="O Air Max 90 combina conforto e estilo clássico com tecnologia moderna. Ideal para uso diário e performance urbana, garantindo amortecimento e durabilidade excepcionais.";
     }
 }
 
 // MENU
-document.getElementById('menu-men').addEventListener('click',()=>{
-    setSizes([38,39,40,41,42]);
-    categoryText.innerText = "Men's Shoes";
-    card.style.display='flex';
-    contact.style.display='none';
-});
-document.getElementById('menu-women').addEventListener('click',()=>{
-    setSizes([35,36,37,38]);
-    categoryText.innerText = "Women's Shoes";
-    card.style.display='flex';
-    contact.style.display='none';
-});
-document.getElementById('menu-kids').addEventListener('click',()=>{
-    setSizes([30,31,32,33]);
-    categoryText.innerText = "Kids' Shoes";
-    card.style.display='flex';
-    contact.style.display='none';
-});
-document.getElementById('menu-contact').addEventListener('click',()=>{
-    card.style.display='none';
-    contact.style.display='block';
-});
-document.getElementById('back-btn').addEventListener('click',()=>{
-    contact.style.display='none';
-    card.style.display='flex';
-});
+document.getElementById('menu-men').addEventListener('click',()=>{ setSizes([38,39,40,41,42]); categoryText.innerText = "Men's Shoes"; card.style.display='flex'; contact.style.display='none'; });
+document.getElementById('menu-women').addEventListener('click',()=>{ setSizes([35,36,37,38]); categoryText.innerText = "Women's Shoes"; card.style.display='flex'; contact.style.display='none'; });
+document.getElementById('menu-kids').addEventListener('click',()=>{ setSizes([30,31,32,33]); categoryText.innerText = "Kids' Shoes"; card.style.display='flex'; contact.style.display='none'; });
+document.getElementById('menu-contact').addEventListener('click',()=>{ card.style.display='none'; contact.style.display='block'; });
+document.getElementById('back-btn').addEventListener('click',()=>{ contact.style.display='none'; card.style.display='flex'; });
 
-// Inicializa a página com tênis rosa
+// INICIALIZA COM TÊNIS ROSA
 changeShoe('pink');
 setSizes([38,39,40,41,42]);
 </script>
