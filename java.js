@@ -79,6 +79,12 @@ document.getElementById('menu-contato').addEventListener('click',()=>{
   contactSection.style.display='block';
 });
 
+// HOME - voltar para os tênis
+document.getElementById('menu-home').addEventListener('click', ()=>{
+    contactSection.style.display = 'none';  // esconde contato
+    shoeCard.style.display = 'flex';        // mostra os tênis
+});
+
 // VOLTAR PARA OS TÊNIS
 document.getElementById('back-btn').addEventListener('click',()=>{
   contactSection.style.display='none';
