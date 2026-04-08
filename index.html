@@ -146,6 +146,16 @@ nav a:hover{color:white;}
 }
 .buy-btn:hover{transform:scale(1.05);}
 
+/* Contato */
+#contact-section{
+    display:none;
+    width:80%;
+    margin:30px auto;
+    padding:60px;
+    background:white;
+    text-align:center;
+}
+
 /* Mobile */
 @media(max-width:768px){
 .card{
@@ -204,7 +214,8 @@ nav a{
 </nav>
 </header>
 
-<div class="card">
+<!-- Card principal -->
+<div class="card" id="shoe-card">
 <div class="bg-text" id="bgText">VAPORFLY GREEN</div>
 <div class="img-box">
 <img id="main-shoe" src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true">
@@ -219,7 +230,7 @@ nav a{
 <img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true" class="active" onclick="changeShoe('green')">
 <img src="https://github.com/kauzzwwq/projeto3/blob/main/tenisr.png.png?raw=true" onclick="changeShoe('red')">
 </div>
-<div class="sizes">
+<div class="sizes" id="sizes-wrapper">
 <span>Selecione o Tamanho</span>
 <div class="size-options" id="size-options">
 <button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>
@@ -229,6 +240,14 @@ nav a{
 </div>
 </div>
 
+<!-- Contato -->
+<div id="contact-section">
+<h1>CONTATO</h1>
+<p>GitHub: <a href="https://github.com/kauzzwwq" target="_blank">https://github.com/kauzzwwq</a></p>
+<p>WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">https://wa.me/5549999695059</a></p>
+<button class="buy-btn" id="back-btn">Voltar para os tênis</button>
+</div>
+
 <script>
 const mainShoe = document.getElementById('main-shoe');
 const bgText = document.getElementById('bgText');
@@ -236,7 +255,8 @@ const buyBtn = document.getElementById('buy-btn');
 const sizeOptions = document.getElementById('size-options');
 const shoeCategory = document.getElementById('shoe-category');
 const shoeDescription = document.getElementById('shoe-description');
-const infoCard = document.getElementById('info-card');
+const shoeCard = document.getElementById('shoe-card');
+const contactSection = document.getElementById('contact-section');
 
 function selectSize() {
   const buttons = document.querySelectorAll('.size-options button');
@@ -295,19 +315,16 @@ document.getElementById('menu-kids').addEventListener('click',()=>{
   selectSize();
 });
 
-// Contato com botão "Voltar para os tênis"
+// Contato
 document.getElementById('menu-contato').addEventListener('click',()=>{
-  infoCard.innerHTML=`
-    <h1 style="text-align:center;">CONTATO</h1>
-    <p style="text-align:center;">GitHub: <a href="https://github.com/kauzzwwq" target="_blank">https://github.com/kauzzwwq</a></p>
-    <p style="text-align:center;">WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">https://wa.me/5549999695059</a></p>
-    <div style="text-align:center;margin-top:20px;">
-      <button id="back-btn" class="buy-btn">Voltar para os tênis</button>
-    </div>
-  `;
-  document.getElementById('back-btn').addEventListener('click',()=>{
-    location.reload(); // volta para o card inicial
-  });
+  shoeCard.style.display = 'none';
+  contactSection.style.display = 'block';
+});
+
+// Botão voltar
+document.getElementById('back-btn').addEventListener('click',()=>{
+  contactSection.style.display = 'none';
+  shoeCard.style.display = 'flex';
 });
 </script>
 
