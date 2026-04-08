@@ -63,7 +63,7 @@ nav a:hover{color:white;}
     left:50%;
     transform:translateX(-50%);
     letter-spacing:-5px;
-    font-size:180px;
+    font-size:179px; /* diminuiu 1 grau */
     font-weight:800;
     color:rgba(0,200,83,0.05);
     white-space:nowrap;
@@ -209,7 +209,7 @@ nav a{
 <div class="img-box">
 <img id="main-shoe" src="https://github.com/kauzzwwq/projeto3/blob/main/tenisva.png.png?raw=true">
 </div>
-<div class="info">
+<div class="info" id="info-card">
 <span id="shoe-category">Men's Shoes</span>
 <h1>NIKE<br>VAPORFLY 3</h1>
 <h2>$160</h2>
@@ -225,19 +225,19 @@ nav a{
 <button>38</button><button>39</button><button>40</button><button>41</button><button>42</button>
 </div>
 </div>
-<button class="buy-btn">BUY NOW</button>
+<button class="buy-btn" id="buy-btn">BUY NOW</button>
 </div>
 </div>
 
 <script>
 const mainShoe = document.getElementById('main-shoe');
 const bgText = document.getElementById('bgText');
-const buyBtn = document.querySelector('.buy-btn');
+const buyBtn = document.getElementById('buy-btn');
 const sizeOptions = document.getElementById('size-options');
 const shoeCategory = document.getElementById('shoe-category');
 const shoeDescription = document.getElementById('shoe-description');
+const infoCard = document.getElementById('info-card');
 
-// Seleção de tamanho
 function selectSize() {
   const buttons = document.querySelectorAll('.size-options button');
   buttons.forEach(btn=>{
@@ -249,7 +249,6 @@ function selectSize() {
 }
 selectSize();
 
-// Trocar tênis
 function changeShoe(color){
   const thumbs=document.querySelectorAll('.thumbs img');
   thumbs.forEach(t=>{t.classList.remove('active'); t.style.borderBottomColor="transparent";});
@@ -296,9 +295,19 @@ document.getElementById('menu-kids').addEventListener('click',()=>{
   selectSize();
 });
 
-// Contato placeholder
+// Contato com botão "Voltar para os tênis"
 document.getElementById('menu-contato').addEventListener('click',()=>{
-  alert('Aqui você pode colocar suas informações de contato.');
+  infoCard.innerHTML=`
+    <h1 style="text-align:center;">CONTATO</h1>
+    <p style="text-align:center;">GitHub: <a href="https://github.com/kauzzwwq" target="_blank">https://github.com/kauzzwwq</a></p>
+    <p style="text-align:center;">WhatsApp: <a href="https://wa.me/5549999695059" target="_blank">https://wa.me/5549999695059</a></p>
+    <div style="text-align:center;margin-top:20px;">
+      <button id="back-btn" class="buy-btn">Voltar para os tênis</button>
+    </div>
+  `;
+  document.getElementById('back-btn').addEventListener('click',()=>{
+    location.reload(); // volta para o card inicial
+  });
 });
 </script>
 
