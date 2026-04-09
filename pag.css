@@ -294,22 +294,53 @@ nav a:hover{color:white;}
 
   html, body {
     width: 100%;
+    min-height: 100dvh;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background: linear-gradient(135deg,#00c853,#003d1f);
+  }
+
+  body {
+    display: block;
   }
 
   header {
-    padding: 10px;
+    width: 100%;
+    padding: 8px 12px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255,255,255,0.92);
+  }
+
+  .logo {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
   }
 
   .logo img {
-    height: 45px;
+    height: 42px;
+  }
+
+  nav {
+    width: 100%;
+    margin: 0;
   }
 
   nav ul {
-    gap: 4px;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
   }
 
   nav a {
@@ -319,15 +350,29 @@ nav a:hover{color:white;}
 
   .card {
     width: 95%;
+    max-width: 100%;
     margin: 10px auto;
     padding: 15px;
     box-sizing: border-box;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-radius: 18px;
+  }
+
+  .bg-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 42px;
+    letter-spacing: -2px;
+    white-space: nowrap;
+    z-index: 0;
   }
 
   .img-box {
@@ -335,14 +380,16 @@ nav a:hover{color:white;}
     left: 0;
     top: 0;
     transform: none;
-    margin: 0 0 10px 0;
+    width: 100%;
+    margin: 20px 0 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
 
   .img-box img {
-    width: 70%;
+    width: 65%;
     max-width: 220px;
     height: auto;
     transform: rotate(-35deg);
@@ -351,68 +398,82 @@ nav a:hover{color:white;}
   .info {
     width: 100%;
     margin: 0;
+    padding: 0;
     transform: none;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .info span {
+    font-size: 10px;
   }
 
   .info h1 {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.1;
+    margin: 6px 0 10px;
   }
 
   .info h2 {
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .info p {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.4;
-    max-width: 100%;
-  }
-
-  .bg-text {
-    font-size: 45px;
-    top: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .thumbs {
+    width: 100%;
+    display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 12px;
     flex-wrap: wrap;
   }
 
   .thumbs img {
-    width: 50px;
+    width: 48px;
+  }
+
+  .sizes {
+    margin-top: 12px;
   }
 
   .size-options {
+    display: flex;
     justify-content: center;
     gap: 6px;
     flex-wrap: wrap;
   }
 
   .size-options button {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
   }
 
   .buy-btn {
-    width: 160px;
-    height: 45px;
-    margin-top: 15px;
+    width: 150px;
+    height: 42px;
+    margin: 15px auto 0 auto;
+    font-size: 12px;
   }
 
   #contact-section {
     width: 95%;
-    margin: 0 auto;
-    padding: 20px;
     min-height: 100dvh;
+    margin: 10px auto;
+    padding: 20px;
     box-sizing: border-box;
+    text-align: center;
+    border-radius: 18px;
   }
 }
