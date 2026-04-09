@@ -290,7 +290,7 @@ nav a:hover{color:white;}
     /* Botão de compra centralizado */
     .buy-btn {margin:20px auto 0 auto}
 }
-@media (max-width: 600px) and (orientation: landscape) {
+@media (max-width: 900px) and (orientation: landscape) {
 
   html, body {
     width: 100%;
@@ -301,76 +301,64 @@ nav a:hover{color:white;}
     background: linear-gradient(135deg,#00c853,#003d1f);
   }
 
-  body {
-    display: block;
-  }
-
   header {
-    width: 100%;
-    padding: 8px 12px;
-    margin: 0;
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: rgba(255,255,255,0.92);
+    padding: 15px 0;
+    background: transparent;
   }
 
   .logo {
     position: absolute;
+    top: 10px;
     left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
   }
 
   .logo img {
-    height: 42px;
+    height: 55px;
   }
 
   nav {
-    width: 100%;
-    margin: 0;
+    margin-top: 10px;
   }
 
   nav ul {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin: 0;
+    gap: 10px;
     padding: 0;
-    flex-wrap: wrap;
+    margin: 0;
   }
 
   nav a {
-    font-size: 13px;
-    padding: 4px 6px;
+    font-size: 15px;
+    padding: 6px 8px;
   }
 
   .card {
     width: 95%;
-    max-width: 100%;
-    margin: 10px auto;
-    padding: 15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin: 15px auto;
+    background: white;
+    padding: 25px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     overflow: hidden;
-    border-radius: 18px;
+    box-sizing: border-box;
   }
 
   .bg-text {
     position: absolute;
-    top: 10px;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 42px;
-    letter-spacing: -2px;
+    font-size: 70px;
+    font-weight: 800;
+    color: rgba(0,200,83,0.05);
     white-space: nowrap;
     z-index: 0;
   }
@@ -380,8 +368,7 @@ nav a:hover{color:white;}
     left: 0;
     top: 0;
     transform: none;
-    width: 100%;
-    margin: 20px 0 10px 0;
+    width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,91 +376,72 @@ nav a:hover{color:white;}
   }
 
   .img-box img {
-    width: 65%;
-    max-width: 220px;
+    width: 100%;
+    max-width: 260px;
     height: auto;
     transform: rotate(-35deg);
   }
 
   .info {
-    width: 100%;
+    flex: 1;
     margin: 0;
-    padding: 0;
     transform: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     z-index: 1;
-  }
-
-  .info span {
-    font-size: 10px;
+    text-align: left;
   }
 
   .info h1 {
-    font-size: 24px;
+    font-size: 34px;
+    margin: 5px 0 10px;
     line-height: 1.1;
-    margin: 6px 0 10px;
   }
 
   .info h2 {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .info p {
-    font-size: 11px;
-    line-height: 1.4;
-    max-width: 90%;
-    margin: 0 auto;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 100%;
   }
 
   .thumbs {
-    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
   .thumbs img {
-    width: 48px;
-  }
-
-  .sizes {
-    margin-top: 12px;
+    width: 65px;
   }
 
   .size-options {
     display: flex;
-    justify-content: center;
-    gap: 6px;
+    gap: 8px;
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
   .size-options button {
-    width: 34px;
-    height: 34px;
-    font-size: 12px;
+    width: 40px;
+    height: 40px;
   }
 
   .buy-btn {
-    width: 150px;
-    height: 42px;
-    margin: 15px auto 0 auto;
-    font-size: 12px;
+    margin-top: 20px;
+    width: 180px;
+    height: 48px;
   }
 
   #contact-section {
     width: 95%;
+    margin: 15px auto;
+    padding: 25px;
     min-height: 100dvh;
-    margin: 10px auto;
-    padding: 20px;
     box-sizing: border-box;
-    text-align: center;
-    border-radius: 18px;
   }
 }
