@@ -290,23 +290,44 @@ nav a:hover{color:white;}
     /* Botão de compra centralizado */
     .buy-btn {margin:20px auto 0 auto}
 }
-@media (max-width:  600px) and (orientation: landscape) {
+@media (max-width: 600px) and (orientation: landscape) {
 
   html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  nav ul {
+    gap: 4px;
+    justify-content: space-around;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 4px 6px;
   }
 
   .card {
     width: 95%;
     margin: 10px auto;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     position: relative;
+    overflow: hidden;
   }
 
   .img-box {
@@ -314,75 +335,76 @@ nav a:hover{color:white;}
     left: 0;
     top: 0;
     transform: none;
-    width: 45%;
-    margin: 0;
+    margin: 0 0 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .img-box img {
-    width: 100%;
-    max-width: 280px;
+    width: 70%;
+    max-width: 220px;
     height: auto;
     transform: rotate(-35deg);
   }
 
   .info {
-    width: 50%;
+    width: 100%;
     margin: 0;
     transform: none;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
   }
 
   .info h1 {
-    font-size: 36px;
+    font-size: 26px;
     line-height: 1.1;
   }
 
   .info h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .info p {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.4;
     max-width: 100%;
   }
 
   .bg-text {
-    font-size: 70px;
-    top: 5%;
+    font-size: 45px;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .thumbs {
-    justify-content: flex-start;
-    gap: 10px;
-    margin-top: 15px;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
 
   .thumbs img {
-    width: 60px;
+    width: 50px;
   }
 
   .size-options {
-    justify-content: flex-start;
-    gap: 8px;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
   .size-options button {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .buy-btn {
-    width: 180px;
+    width: 160px;
+    height: 45px;
     margin-top: 15px;
   }
 
@@ -391,5 +413,6 @@ nav a:hover{color:white;}
     margin: 0 auto;
     padding: 20px;
     min-height: 100dvh;
+    box-sizing: border-box;
   }
 }
