@@ -290,7 +290,7 @@ nav a:hover{color:white;}
     /* Botão de compra centralizado */
     .buy-btn {margin:20px auto 0 auto}
 }
-@media (max-width: 900px) and (orientation: landscape) {
+@media (max-width:  600px) and (orientation: landscape) {
 
   html, body {
     overflow-x: hidden;
