@@ -151,142 +151,96 @@ nav a:hover{color:white;}
 }
 
 /* MOBILE */
-@media(max-width:900px){
-    
-  html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* evita scroll horizontal */
-    background: linear-gradient(135deg,#00c853,#003d1f); /* garante fundo */
-  }
-    
-  #contact-section{
-    width:95%;
-    margin:0 auto;
-    min-height:100dvh;
-    padding:30px 20px;
-    box-sizing:border-box;
-}
-    
-
-  header{
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 15px 10px;
-    margin-top: 0;
-    background: rgba(255,255,255,0.9);
+@media (max-width: 900px) and (orientation: landscape) {
+  header {
+    padding: 10px;
   }
 
-  .logo{
-    position: relative;
-    top:0;
-    left:0;
-    margin-right: 10px;
-  }
-  nav{
-    margin-top:0;
-    flex:1;
-  }
-  nav ul{
-    flex-direction: row;
-    justify-content: space-around;
-    gap:5px;
-  }
-  nav a{
-    font-size:16px;
-    padding:5px 8px;
-    color:black;
+  .logo img {
+    height: 45px;
   }
 
-  .card{
-    flex-direction: column;
+  nav a {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+
+  .card {
+    flex-direction: row; /* lado a lado */
+    width: 95%;
     padding: 20px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center; /* centraliza verticalmente os itens */
-    justify-content: center; /* centraliza horizontalmente */
-    text-align: center;
-    position: relative;
-  }
-  .img-box img{
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-    transform: rotate(-40deg);
-  }
-
-  .info{
-    margin-left:0;
-    transform:none;
-    margin-top:0;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    margin: 10px auto;
     align-items: center;
     justify-content: center;
+    gap: 20px;
   }
 
-  .bg-text{
-    font-size: 70px;
+  .img-box {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-box img {
+    width: 90%;
+    max-width: 250px;
+    height: auto;
+    transform: rotate(-35deg);
+  }
+
+  .info {
+    width: 50%;
+    margin: 0;
+    transform: none;
+    text-align: left;
+    padding: 0;
+  }
+
+  .info h1 {
+    font-size: 32px;
+  }
+
+  .info h2 {
+    font-size: 16px;
+  }
+
+  .info p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .bg-text {
+    font-size: 60px;
     top: 5%;
   }
 
-  .thumbs{
-    justify-content: center;
-    margin-top: 15px;
-    flex-wrap: wrap;
+  .thumbs {
     gap: 10px;
-  }
-
-  .thumbs img{
-    width: 80px;
-  }
-
-  .size-options{
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
   }
 
-  .buy-btn{
-    margin: 20px auto 0 auto;
-    width: 200px;
+  .thumbs img {
+    width: 70px;
   }
-    .logo img {height:60px;}
-    
-    /* Card centralizado e responsivo */
-    /* Tênis ajustado dentro do card */
-    .img-box {
-        position:relative;
-        left:0;
-        top:0;
-        transform:none;
-        margin-bottom:15px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
-    /* Info centralizada */
-    .info {
-        margin:0;
-        transform:none;
-        text-align:center;
-        width:100%;
-        padding:0;
-    }
 
-    /* Texto de fundo menor */
-    .bg-text {font-size:70px; top:0;}
+  .size-options {
+    gap: 8px;
+  }
 
-    /* Thumbs e tamanhos centralizados */
-   
-    .size-options {justify-content:center; flex-wrap:wrap;}
+  .buy-btn {
+    width: 180px;
+    height: 50px;
+    margin-top: 20px;
+  }
 
-    /* Botão de compra centralizado */
-    .buy-btn {margin:20px auto 0 auto;}
+  #contact-section {
+    width: 95%;
+    padding: 20px;
+    min-height: 100dvh;
+  }
 }
