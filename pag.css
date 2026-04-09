@@ -146,6 +146,8 @@ nav a:hover{color:white;}
     padding:60px;
     background:white;
     text-align:center;
+    min-height:100vh;
+    box-sizing:border-box;
 }
 
 /* MOBILE */
