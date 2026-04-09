@@ -293,71 +293,65 @@ nav a:hover{color:white;}
 @media (max-width: 900px) and (orientation: landscape) {
 
   .card {
-    width: 80%;
-    margin: 30px auto;
-    padding: 60px;
+    width: 95%;
+    margin: 10px auto;
+    padding: 20px;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     text-align: left;
   }
 
   .img-box {
-    position: absolute;
-    left: -120px;
-    top: 45%;
-    transform: translateY(-50%);
-    z-index: 1;
-    margin-bottom: 0;
-    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin: 0;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .img-box img {
-    width: 800px;
-    max-width: none;
-    transform: rotate(-40deg);
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    transform: rotate(-35deg);
   }
 
   .info {
-    flex: 1;
-    margin-left: 730px;
-    margin-top: 180px;
-    transform: translateY(-110px);
-    width: auto;
+    width: 50%;
+    margin: 0;
+    transform: none;
     text-align: left;
     display: block;
     padding: 0;
   }
 
   .bg-text {
-    font-size: 179px;
-    top: -5%;
+    font-size: 60px;
+    top: 5%;
   }
 
   .thumbs {
     justify-content: flex-start;
-    gap: 15px;
+    gap: 10px;
   }
 
   .thumbs img {
-    width: 120px;
+    width: 60px;
   }
 
   .size-options {
     justify-content: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
 
   .buy-btn {
-    width: 220px;
-    margin-top: 30px;
-  }
-
-  #contact-section {
-    width: 80%;
-    margin: 30px auto;
-    min-height: 100vh;
-    padding: 60px;
+    width: 180px;
+    margin-top: 15px;
   }
 }
