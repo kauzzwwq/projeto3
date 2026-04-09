@@ -292,15 +292,33 @@ nav a:hover{color:white;}
 }
 @media (max-width: 900px) and (orientation: landscape) {
 
+  html, body {
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+
   .card {
     width: 95%;
     margin: 10px auto;
-    padding: 20px;
+    padding: 25px;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
-    text-align: left;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .img-box {
@@ -308,8 +326,8 @@ nav a:hover{color:white;}
     left: 0;
     top: 0;
     transform: none;
-    margin: 0;
     width: 45%;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -317,7 +335,7 @@ nav a:hover{color:white;}
 
   .img-box img {
     width: 100%;
-    max-width: 250px;
+    max-width: 320px;
     height: auto;
     transform: rotate(-35deg);
   }
@@ -331,18 +349,34 @@ nav a:hover{color:white;}
     padding: 0;
   }
 
+  .info h1 {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .info h2 {
+    font-size: 18px;
+  }
+
+  .info p {
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
   .bg-text {
-    font-size: 60px;
+    font-size: 90px;
     top: 5%;
   }
 
   .thumbs {
     justify-content: flex-start;
     gap: 10px;
+    margin-top: 15px;
   }
 
   .thumbs img {
-    width: 60px;
+    width: 65px;
   }
 
   .size-options {
@@ -350,8 +384,21 @@ nav a:hover{color:white;}
     gap: 8px;
   }
 
+  .size-options button {
+    width: 42px;
+    height: 42px;
+  }
+
   .buy-btn {
     width: 180px;
-    margin-top: 15px;
+    height: 48px;
+    margin-top: 20px;
+  }
+
+  #contact-section {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100dvh;
   }
 }
