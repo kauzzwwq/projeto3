@@ -290,3 +290,74 @@ nav a:hover{color:white;}
     /* Botão de compra centralizado */
     .buy-btn {margin:20px auto 0 auto}
 }
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .card {
+    width: 80%;
+    margin: 30px auto;
+    padding: 60px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .img-box {
+    position: absolute;
+    left: -120px;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 1;
+    margin-bottom: 0;
+    display: block;
+  }
+
+  .img-box img {
+    width: 800px;
+    max-width: none;
+    transform: rotate(-40deg);
+  }
+
+  .info {
+    flex: 1;
+    margin-left: 730px;
+    margin-top: 180px;
+    transform: translateY(-110px);
+    width: auto;
+    text-align: left;
+    display: block;
+    padding: 0;
+  }
+
+  .bg-text {
+    font-size: 179px;
+    top: -5%;
+  }
+
+  .thumbs {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .thumbs img {
+    width: 120px;
+  }
+
+  .size-options {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .buy-btn {
+    width: 220px;
+    margin-top: 30px;
+  }
+
+  #contact-section {
+    width: 80%;
+    margin: 30px auto;
+    min-height: 100vh;
+    padding: 60px;
+  }
+}
