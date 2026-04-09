@@ -289,39 +289,4 @@ nav a:hover{color:white;}
 
     /* Botão de compra centralizado */
     .buy-btn {margin:20px auto 0 auto}
-    @media (max-width: 900px) and (orientation: landscape) {
-
-  .card {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .img-box {
-    margin-bottom: 10px;
-  }
-
-  .img-box img {
-    max-width: 220px; /* reduz um pouco só de lado */
-  }
-
-  .bg-text {
-    font-size: 55px; /* diminui o texto de fundo */
-  }
-
-  .info {
-    margin-top: 10px;
-  }
-
-  .thumbs img {
-    width: 65px; /* thumbs menores */
-  }
-
-  .buy-btn {
-    width: 180px;
-    height: 48px;
-  }
-
-  #contact-section {
-    min-height: 100dvh;
-  }
 }
