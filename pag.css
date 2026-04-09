@@ -293,13 +293,12 @@ nav a:hover{color:white;}
 @media (max-width: 900px) and (orientation: landscape) {
 
   html, body {
-    width: 100%;
-    min-height: 100dvh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: linear-gradient(135deg,#00c853,#003d1f);
-  }
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
   header {
     display: flex;
@@ -309,6 +308,10 @@ nav a:hover{color:white;}
     padding: 15px 0;
     background: transparent;
   }
+  body {
+  background: linear-gradient(135deg,#00c853,#003d1f);
+  background-attachment: fixed;
+}  
 
   .logo {
     position: absolute;
@@ -337,20 +340,13 @@ nav a:hover{color:white;}
     padding: 6px 8px;
   }
 
-  .card {
-    width: 95%;
-    margin: 15px auto;
-    background: white;
-    padding: 25px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
+ .card {
+  width: 95%;
+  max-width: 100%;
+  margin: 15px auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
   .bg-text {
     position: absolute;
     top: 5%;
@@ -364,31 +360,29 @@ nav a:hover{color:white;}
   }
 
   .img-box {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+  display: flex;
+  justify-content: center;
+}
 
-  .img-box img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    transform: rotate(-35deg);
-  }
+.img-box {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+  display: flex;
+  justify-content: center;
+}
 
-  .info {
-    flex: 1;
-    margin: 0;
-    transform: none;
-    z-index: 1;
-    text-align: left;
-  }
+ .info {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  transform: none;
+}
 
   .info h1 {
     font-size: 34px;
